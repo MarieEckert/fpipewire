@@ -27,7 +27,7 @@
 {$ifndef PIPEWIRE_IMPL_CLIENT_H}
 {$define PIPEWIRE_IMPL_CLIENT_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/hook.h>}
+
   {* \page page_client_impl Client Implementation
    *
    * \see \ref pw_impl_client
@@ -82,11 +82,11 @@
         {undefined structure}
       end;
 
-{$include <pipewire/context.h>}
-{$include <pipewire/global.h>}
-{$include <pipewire/properties.h>}
-{$include <pipewire/resource.h>}
-{$include <pipewire/permission.h>}
+
+
+
+
+
   {* The events that a client can emit  }
 (* error 
 #define PW_VERSION_IMPL_CLIENT_EVENTS	0

@@ -24,12 +24,12 @@
 {$ifndef PIPEWIRE_PORT_H}
 {$define PIPEWIRE_PORT_H}  
 { C++ extern C conditionnal removed }
-{$include <stdarg.h>}
-{$include <errno.h>}
-{$include <spa/utils/defs.h>}
-{$include <spa/utils/hook.h>}
-{$include <spa/param/param.h>}
-{$include <pipewire/proxy.h>}
+
+
+
+
+
+
   {* \defgroup pw_port Port
    * Port interface
     }

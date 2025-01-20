@@ -29,10 +29,10 @@
 {$ifndef PIPEWIRE_PROPERTIES_H}
 {$define PIPEWIRE_PROPERTIES_H}  
 { C++ extern C conditionnal removed }
-{$include <stdarg.h>}
-{$include <spa/utils/cleanup.h>}
-{$include <spa/utils/dict.h>}
-{$include <spa/utils/string.h>}
+
+
+
+
   {* \defgroup pw_properties Properties
    *
    * Properties are used to pass around arbitrary key/value pairs.

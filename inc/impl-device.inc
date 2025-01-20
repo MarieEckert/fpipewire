@@ -47,11 +47,11 @@
         {undefined structure}
       end;
 
-{$include <spa/monitor/device.h>}
-{$include <pipewire/context.h>}
-{$include <pipewire/global.h>}
-{$include <pipewire/properties.h>}
-{$include <pipewire/resource.h>}
+
+
+
+
+
   {* Device events, listen to them with \ref pw_impl_device_add_listener  }
 (* error 
 #define PW_VERSION_IMPL_DEVICE_EVENTS	0

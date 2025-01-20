@@ -21,8 +21,8 @@
   { SPDX-License-Identifier: MIT  }
 {$ifndef PIPEWIRE_LOG_H}
 {$define PIPEWIRE_LOG_H}  
-{$include <spa/support/log.h>}
-{$include <spa/utils/defs.h>}
+
+
 { C++ extern C conditionnal removed }
   {* \defgroup pw_log Logging
    *

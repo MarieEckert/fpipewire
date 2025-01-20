@@ -21,7 +21,7 @@
 {$ifndef PIPEWIRE_TYPE_H}
 {$define PIPEWIRE_TYPE_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/type.h>}
+
   {* \defgroup pw_type Type info
    * Type information
     }

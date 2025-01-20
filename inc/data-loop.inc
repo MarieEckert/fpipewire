@@ -24,8 +24,8 @@
 {$ifndef PIPEWIRE_DATA_LOOP_H}
 {$define PIPEWIRE_DATA_LOOP_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/hook.h>}
-{$include <spa/support/thread.h>}
+
+
   {* \defgroup pw_data_loop Data Loop
    *
    * \brief PipeWire rt-loop object
@@ -44,8 +44,8 @@
         {undefined structure}
       end;
 
-{$include <pipewire/loop.h>}
-{$include <pipewire/properties.h>}
+
+
   {* Loop events, use \ref pw_data_loop_add_listener to add a listener  }
 (* error 
 #define PW_VERSION_DATA_LOOP_EVENTS		0

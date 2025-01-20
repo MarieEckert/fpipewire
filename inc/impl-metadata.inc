@@ -40,12 +40,12 @@
         {undefined structure}
       end;
 
-{$include <pipewire/context.h>}
-{$include <pipewire/impl-client.h>}
-{$include <pipewire/global.h>}
-{$include <pipewire/properties.h>}
-{$include <pipewire/resource.h>}
-{$include "pipewire/extensions/metadata.h"}
+
+
+
+
+
+
   {* Metadata events, listen to them with \ref pw_impl_metadata_add_listener  }
 (* error 
 #define PW_VERSION_IMPL_METADATA_EVENTS	0

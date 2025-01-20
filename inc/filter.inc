@@ -51,12 +51,12 @@
         {undefined structure}
       end;
 
-{$include <spa/buffer/buffer.h>}
-{$include <spa/node/io.h>}
-{$include <spa/param/param.h>}
-{$include <spa/pod/command.h>}
-{$include <pipewire/core.h>}
-{$include <pipewire/stream.h>}
+
+
+
+
+
+
   {* \enum pw_filter_state The state of a filter   }
   {*< the stream is in error  }
   {*< unconnected  }

@@ -21,21 +21,21 @@
 {$ifndef PIPEWIRE_UTILS_H}
 {$define PIPEWIRE_UTILS_H}  
 { C++ extern C conditionnal removed }
-{$include <stdlib.h>}
-{$include <string.h>}
-{$include <sys/un.h>}
+
+
+
 {$ifndef _POSIX_C_SOURCE}
-{$include <sys/mount.h>}
+
 {$endif}
-{$include <errno.h>}
+
 {$ifndef ENODATA}
 
   const
     ENODATA = 9919;    
 {$endif}
-{$include <spa/utils/cleanup.h>}
-{$include <spa/utils/defs.h>}
-{$include <spa/pod/pod.h>}
+
+
+
   {* \defgroup pw_utils Utilities
    *
    * Various utility functions

@@ -21,7 +21,7 @@
   { SPDX-License-Identifier: MIT  }
 {$ifndef PIPEWIRE_CONF_H}
 {$define PIPEWIRE_CONF_H}  
-{$include <pipewire/context.h>}
+
   {* \defgroup pw_conf Configuration
    * Loading/saving properties from/to configuration files.
     }

@@ -21,7 +21,7 @@
 {$ifndef PIPEWIRE_PERMISSION_H}
 {$define PIPEWIRE_PERMISSION_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/defs.h>}
+
   {* \defgroup pw_permission Permission
    *
    * Permissions are kept for a client and describe what the client is

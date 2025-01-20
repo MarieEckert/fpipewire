@@ -6,9 +6,11 @@ H2PAS_FLAGS = -d -C -p
 H_FILES = $(shell find $(PIPEWIRE) -type f -name '*.h')
 PAS_FILES = $(patsubst $(PIPEWIRE)%.h, $(OUTDIR)%.inc, $(H_FILES))
 
+all: bindings
+
 .PHONY: clean
 clean:
-	rm -rf pas
+	rm -rf $(OUTDIR)
 
 .PHONY: bindings
 bindings: $(PAS_FILES)
@@ -16,4 +18,4 @@ bindings: $(PAS_FILES)
 $(OUTDIR)%.inc: $(PIPEWIRE)%.h
 	mkdir -p "$(@D)"
 	h2pas -i -l $(shell pkg-config --libs libpipewire-0.3 | cut -c 3-) $(H2PAS_FLAGS) -o "$@" "$<"
-
+	sed -i 's/{\$$include .*}//g' "$@"

@@ -25,9 +25,9 @@
 {$ifndef PIPEWIRE_LINK_H}
 {$define PIPEWIRE_LINK_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/defs.h>}
-{$include <spa/utils/hook.h>}
-{$include <pipewire/proxy.h>}
+
+
+
   {* \defgroup pw_link Link
    *
    * A link is the connection between 2 nodes (\ref pw_node). Nodes are

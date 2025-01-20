@@ -25,13 +25,13 @@
 {$ifndef PIPEWIRE_NODE_H}
 {$define PIPEWIRE_NODE_H}  
 { C++ extern C conditionnal removed }
-{$include <stdarg.h>}
-{$include <errno.h>}
-{$include <spa/utils/defs.h>}
-{$include <spa/utils/hook.h>}
-{$include <spa/node/command.h>}
-{$include <spa/param/param.h>}
-{$include <pipewire/proxy.h>}
+
+
+
+
+
+
+
   {* \defgroup pw_node Node
    * Node interface
     }

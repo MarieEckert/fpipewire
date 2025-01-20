@@ -25,8 +25,8 @@
 {$ifndef PIPEWIRE_LOOP_H}
 {$define PIPEWIRE_LOOP_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/support/loop.h>}
-{$include <spa/utils/dict.h>}
+
+
   {* \defgroup pw_loop Loop
    *
    * PipeWire loop object provides an implementation of

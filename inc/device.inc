@@ -24,9 +24,9 @@
 {$ifndef PIPEWIRE_DEVICE_H}
 {$define PIPEWIRE_DEVICE_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/defs.h>}
-{$include <spa/utils/hook.h>}
-{$include <pipewire/proxy.h>}
+
+
+
   {* \defgroup pw_device Device
    * Device interface
     }

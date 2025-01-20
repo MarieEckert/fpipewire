@@ -23,7 +23,7 @@
 {$ifndef PIPEWIRE_CONTROL_H}
 {$define PIPEWIRE_CONTROL_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/hook.h>}
+
   {* \defgroup pw_control Control
    *
    * \brief A control can be used to control a port property.
@@ -39,7 +39,7 @@
         {undefined structure}
       end;
 
-{$include <pipewire/impl.h>}
+
   {* Port events, use \ref pw_control_add_listener  }
 (* error 
 #define PW_VERSION_CONTROL_EVENTS 0

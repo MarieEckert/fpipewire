@@ -25,7 +25,7 @@
 {$ifndef PIPEWIRE_RESOURCE_H}
 {$define PIPEWIRE_RESOURCE_H}  
 { C++ extern C conditionnal removed }
-{$include <spa/utils/hook.h>}
+
   {* \defgroup pw_resource Resource
    *
    * \brief Client owned objects
@@ -52,7 +52,7 @@
         {undefined structure}
       end;
 
-{$include <pipewire/impl-client.h>}
+
   {* Resource events  }
 (* error 
 #define PW_VERSION_RESOURCE_EVENTS	0

@@ -19,7 +19,7 @@
 {$ifndef PIPEWIRE_KEYS_H}
 {$define PIPEWIRE_KEYS_H}  
 { C++ extern C conditionnal removed }
-{$include <pipewire/utils.h>}
+
   {*
    * \defgroup pw_keys Key Names
    *
