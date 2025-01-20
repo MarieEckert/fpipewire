@@ -1,13 +1,3 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_work_queue  = ^pw_work_queue;
 {$IFDEF FPC}

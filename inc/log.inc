@@ -1,16 +1,6 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
     Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
-    Type
-    Pspa_log  = ^spa_log;
-    Pspa_log_topic  = ^spa_log_topic;
+    Pspa_log  = Pointer; {$WARNING ^spa_log}
+    Pspa_log_topic  = Pointer; {$WARNING ^spa_log_topic}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -61,14 +51,14 @@ in declaration at line 39 *)
      *
      * \since 1.1.0
       }
-(* Const before type ignored *)
+
     function pw_log_set_level_string(str:pcchar):cint;cdecl;external;
 
     {* Log a message for a topic  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
+
 (* error 
 	    const char *fmt, ...) SPA_PRINTF_FUNC(6, 7);
 (* error 
@@ -76,10 +66,10 @@ in declaration at line 39 *)
  in declarator_list *)
  in declarator_list *)
     {* Log a message for a topic  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
+
 (* error 
 	     const char *fmt, va_list args) SPA_PRINTF_FUNC(6, 0);
 (* error 
@@ -87,9 +77,9 @@ in declaration at line 39 *)
  in declarator_list *)
  in declarator_list *)
     {* Log a message for the default topic  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
 (* error 
 	   const char *fmt, ...) SPA_PRINTF_FUNC(5, 6);
 (* error 
@@ -97,9 +87,9 @@ in declaration at line 39 *)
  in declarator_list *)
  in declarator_list *)
     {* Log a message for the default topic  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
 (* error 
 	    const char *fmt, va_list args) SPA_PRINTF_FUNC(5, 0);
 (* error 

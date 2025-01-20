@@ -1,13 +1,3 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_buffer  = ^pw_buffer;
     Ppw_filter  = ^pw_filter;
@@ -16,10 +6,10 @@
     Ppw_filter_port_flags  = ^pw_filter_port_flags;
     Ppw_filter_state  = ^pw_filter_state;
     Ppw_properties  = ^pw_properties;
-    Pspa_buffer  = ^spa_buffer;
-    Pspa_dict  = ^spa_dict;
-    Pspa_hook  = ^spa_hook;
-    Pspa_pod  = ^spa_pod;
+    Pspa_buffer  = Pointer; {$WARNING ^spa_buffer}
+    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
+    Pspa_pod  = Pointer; {$WARNING ^spa_pod}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -109,7 +99,7 @@
       end;
 
   {* Convert a filter state to a readable string   }
-(* Const before type ignored *)
+
 
   function pw_filter_state_as_string(state:pw_filter_state):pcchar;cdecl;external;
 
@@ -172,13 +162,13 @@ struct pw_filter *
 
     procedure pw_filter_destroy(filter:Ppw_filter);cdecl;external;
 
-(* Const before type ignored *)
+
     procedure pw_filter_add_listener(filter:Ppw_filter; listener:Pspa_hook; events:Ppw_filter_events; data:pointer);cdecl;external;
 
 (* error 
 enum pw_filter_state pw_filter_get_state(struct pw_filter *filter, const char **error);
 in declaration at line 152 *)
-(* Const before type ignored *)
+
     function pw_filter_get_name(filter:Ppw_filter):pcchar;cdecl;external;
 
 (* error 
@@ -191,7 +181,7 @@ in declaration at line 156 *)
      * to get the latest metadata and data.  }
     {*< a \ref pw_filter  }
     {*< filter flags  }
-(* Const before type ignored *)
+
     {*< an array with params.  }
     {*< number of items in \a params  }    function pw_filter_connect(filter:Ppw_filter; flags:pw_filter_flags; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external;
 
@@ -208,7 +198,7 @@ in declaration at line 156 *)
     {*< port flags  }
     {*< allocated and given to the user as port_data  }
     {*< port properties, ownership is taken  }
-(* Const before type ignored *)
+
     {*< an array of params. The params should
     							  *  ideally contain the supported formats  }
     {*< number of elements in \a params  }    function pw_filter_add_port(filter:Ppw_filter; direction:pw_direction; flags:pw_filter_port_flags; port_data_size:size_t; props:Ppw_properties; 
@@ -218,17 +208,17 @@ in declaration at line 156 *)
     {*< data associated with port  }    function pw_filter_remove_port(port_data:pointer):cint;cdecl;external;
 
     {* get properties, port_data of NULL will give global properties  }
-(* Const before type ignored *)
+
     function pw_filter_get_properties(filter:Ppw_filter; port_data:pointer):Ppw_properties;cdecl;external;
 
     {* Update properties, use NULL port_data for global filter properties  }
-(* Const before type ignored *)
+
     function pw_filter_update_properties(filter:Ppw_filter; port_data:pointer; dict:Pspa_dict):cint;cdecl;external;
 
     {* Set the filter in error state  }
     {*< a \ref pw_filter  }
     {*< a result code  }
-(* Const before type ignored *)
+
     {*< an error message  }
 (* error 
 			) SPA_PRINTF_FUNC(3, 4);
@@ -239,7 +229,7 @@ in declaration at line 156 *)
     {* Update params, use NULL port_data for global filter params  }
     {*< a \ref pw_filter  }
     {*< data associated with port  }
-(* Const before type ignored *)
+
     {*< an array of params.  }
     {*< number of elements in \a params  }    function pw_filter_update_params(filter:Ppw_filter; port_data:pointer; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external;
 

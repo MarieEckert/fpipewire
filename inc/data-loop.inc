@@ -1,18 +1,8 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_data_loop  = ^pw_data_loop;
     Ppw_data_loop_events  = ^pw_data_loop_events;
-    Pspa_hook  = ^spa_hook;
-    Pspa_thread_utils  = ^spa_thread_utils;
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
+    Pspa_thread_utils  = Pointer; {$WARNING ^spa_thread_utils}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -62,7 +52,7 @@
 struct pw_data_loop *
 in declaration at line 42 *)
     {* Add an event listener to loop  }
-(* Const before type ignored *)
+
 
     procedure pw_data_loop_add_listener(loop:Ppw_data_loop; listener:Pspa_hook; events:Ppw_data_loop_events; data:pointer);cdecl;external;
 
@@ -78,11 +68,11 @@ in declaration at line 42 *)
 struct pw_loop *
 in declaration at line 59 *)
     {* Get the loop name. Since 1.1.0  }
-(* Const before type ignored *)
+
     function pw_data_loop_get_name(loop:Ppw_data_loop):pcchar;cdecl;external;
 
     {* Get the loop class. Since 1.1.0  }
-(* Const before type ignored *)
+
     function pw_data_loop_get_class(loop:Ppw_data_loop):pcchar;cdecl;external;
 
     {* Destroy the loop  }
@@ -128,7 +118,7 @@ in declaration at line 79 *)
      *         the return value of func is returned.
      *
      * Since 0.3.3  }
-(* Const before type ignored *)
+
     function pw_data_loop_invoke(loop:Ppw_data_loop; func:spa_invoke_func_t; seq:uint32_t; data:pointer; size:size_t; 
                block:bool; user_data:pointer):cint;cdecl;external;
 

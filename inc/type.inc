@@ -1,15 +1,5 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
     Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
-    Type
-    Pspa_type_info  = ^spa_type_info;
+    Pspa_type_info  = Pointer; {$WARNING ^spa_type_info}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -47,7 +37,7 @@ in define line 32 *)
 (* error 
 #define PW_TYPE_INFO_INTERFACE_BASE	PW_TYPE_INFO_Interface ":"
 in define line 33 *)
-(* Const before type ignored *)
+
 
     function pw_type_info:Pspa_type_info;cdecl;external;
 

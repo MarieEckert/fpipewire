@@ -1,17 +1,7 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_control  = ^pw_control;
     Ppw_control_events  = ^pw_control_events;
-    Pspa_hook  = ^spa_hook;
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -60,7 +50,7 @@ struct pw_impl_port *pw_control_get_port(struct pw_control *control);
 in declaration at line 46 *)
     {* Add an event listener on the control. May be called multiple times.
      * Each listener must be removed, but they may be removed in any order.  }
-(* Const before type ignored *)
+
 
     procedure pw_control_add_listener(control:Ppw_control; listener:Pspa_hook; events:Ppw_control_events; data:pointer);cdecl;external;
 

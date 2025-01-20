@@ -1,13 +1,3 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Psize_t  = ^size_t;
 {$IFDEF FPC}
@@ -49,31 +39,31 @@
   type
 
     pw_destroy_t = procedure (object:pointer);cdecl;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
+
 
   function pw_split_walk(str:pcchar; delimiter:pcchar; len:Psize_t; state:Ppcchar):pcchar;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function pw_split_strv(str:pcchar; delimiter:pcchar; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_split_ip(str:pcchar; delimiter:pcchar; max_tokens:cint; tokens:Ppcchar):cint;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_strv_parse(val:pcchar; len:size_t; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_strv_find(a:Ppcchar; b:pcchar):cint;cdecl;external;
 
   function pw_strv_find_common(a:Ppcchar; b:Ppcchar):cint;cdecl;external;
 
   procedure pw_free_strv(str:Ppcchar);cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_strip(str:pcchar; whitespace:pcchar):pcchar;cdecl;external;
 
 {$if !defined(strndupa)}

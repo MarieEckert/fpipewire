@@ -1,19 +1,9 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_loop  = ^pw_loop;
-    Pspa_loop  = ^spa_loop;
-    Pspa_loop_control  = ^spa_loop_control;
-    Pspa_loop_utils  = ^spa_loop_utils;
-    Pspa_system  = ^spa_system;
+    Pspa_loop  = Pointer; {$WARNING ^spa_loop}
+    Pspa_loop_control  = Pointer; {$WARNING ^spa_loop_control}
+    Pspa_loop_utils  = Pointer; {$WARNING ^spa_loop_utils}
+    Pspa_system  = Pointer; {$WARNING ^spa_system}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -43,7 +33,7 @@
   {*< wrapped loop  }
   {*< loop control  }
   {*< loop utils  }
-(* Const before type ignored *)
+
 
   type
     Ppw_loop = ^pw_loop;
@@ -61,7 +51,7 @@ in declaration at line 38 *)
 
     procedure pw_loop_destroy(loop:Ppw_loop);cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_loop_set_name(loop:Ppw_loop; name:pcchar):cint;cdecl;external;
 
 (* error 

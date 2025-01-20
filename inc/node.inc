@@ -1,13 +1,3 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_node  = ^pw_node;
     Ppw_node_events  = ^pw_node_events;
@@ -66,7 +56,7 @@ in define line 30 *)
         PW_NODE_STATE_RUNNING := 3);
 
     {* Convert a \ref pw_node_state to a readable string  }
-(* Const before type ignored *)
+
 
     function pw_node_state_as_string(state:pw_node_state):pcchar;cdecl;external;
 

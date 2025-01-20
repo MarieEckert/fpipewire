@@ -1,21 +1,11 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_client_info  = ^pw_client_info;
     Ppw_impl_client  = ^pw_impl_client;
     Ppw_impl_client_events  = ^pw_impl_client_events;
     Ppw_permission  = ^pw_permission;
     Ppw_properties  = ^pw_properties;
-    Pspa_dict  = ^spa_dict;
-    Pspa_hook  = ^spa_hook;
+    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -125,22 +115,22 @@ struct pw_impl_client *
     function pw_impl_client_get_user_data(client:Ppw_impl_client):pointer;cdecl;external;
 
     {* Get the client information  }
-(* Const before type ignored *)
+
     function pw_impl_client_get_info(client:Ppw_impl_client):Ppw_client_info;cdecl;external;
 
     {* Update the client properties  }
-(* Const before type ignored *)
+
     function pw_impl_client_update_properties(client:Ppw_impl_client; dict:Pspa_dict):cint;cdecl;external;
 
     {* Update the client permissions  }
-(* Const before type ignored *)
+
     function pw_impl_client_update_permissions(client:Ppw_impl_client; n_permissions:uint32_t; permissions:Ppw_permission):cint;cdecl;external;
 
     {* check if a client has permissions for global_id, Since 0.3.9  }
     function pw_impl_client_check_permissions(client:Ppw_impl_client; global_id:uint32_t; permissions:uint32_t):cint;cdecl;external;
 
     {* Get the client properties  }
-(* Const before type ignored *)
+
     function pw_impl_client_get_properties(client:Ppw_impl_client):Ppw_properties;cdecl;external;
 
     {* Get the context used to create this client  }
@@ -168,7 +158,7 @@ in declaration at line 146 *)
 struct pw_mempool *pw_impl_client_get_mempool(struct pw_impl_client *client);
 in declaration at line 149 *)
     {* listen to events from this client  }
-(* Const before type ignored *)
+
     procedure pw_impl_client_add_listener(client:Ppw_impl_client; listener:Pspa_hook; events:Ppw_impl_client_events; data:pointer);cdecl;external;
 
     {* Mark the client busy. This can be used when an asynchronous operation is

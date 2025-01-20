@@ -1,19 +1,9 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_impl_metadata  = ^pw_impl_metadata;
     Ppw_impl_metadata_events  = ^pw_impl_metadata_events;
     Ppw_metadata  = ^pw_metadata;
     Ppw_properties  = ^pw_properties;
-    Pspa_hook  = ^spa_hook;
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -63,7 +53,7 @@
 struct pw_impl_metadata *pw_context_create_metadata(struct pw_context *context,
 in declaration at line 51 *)
     {* Get the metadata properties  }
-(* Const before type ignored *)
+
 
     function pw_impl_metadata_get_properties(metadata:Ppw_impl_metadata):Ppw_properties;cdecl;external;
 
@@ -83,18 +73,18 @@ in declaration at line 66 *)
 struct pw_global *pw_impl_metadata_get_global(struct pw_impl_metadata *metadata);
 in declaration at line 69 *)
     {* Add an event listener  }
-(* Const before type ignored *)
+
     procedure pw_impl_metadata_add_listener(metadata:Ppw_impl_metadata; listener:Pspa_hook; events:Ppw_impl_metadata_events; data:pointer);cdecl;external;
 
     {* Set a property  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
     function pw_impl_metadata_set_property(metadata:Ppw_impl_metadata; subject:uint32_t; key:pcchar; _type:pcchar; value:pcchar):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
 (* error 
 			const char *fmt, ...) SPA_PRINTF_FUNC(5,6);
 (* error 

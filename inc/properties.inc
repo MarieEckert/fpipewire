@@ -1,21 +1,11 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Pbool  = ^bool;
     PFILE  = ^FILE;
     Pint32_t  = ^int32_t;
     Pint64_t  = ^int64_t;
     Ppw_properties  = ^pw_properties;
-    Pspa_dict  = ^spa_dict;
-    Pspa_error_location  = ^spa_error_location;
+    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
+    Pspa_error_location  = Pointer; {$WARNING ^spa_error_location}
     Puint32_t  = ^uint32_t;
     Puint64_t  = ^uint64_t;
 {$IFDEF FPC}
@@ -69,33 +59,33 @@ in declaration at line 46 *)
 (* error 
 struct pw_properties *
 in declaration at line 49 *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 (* Const before declarator ignored *)
 
     function pw_properties_update_keys(props:Ppw_properties; dict:Pspa_dict; keys:Ppcchar):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 (* Const before declarator ignored *)
     function pw_properties_update_ignore(props:Ppw_properties; dict:Pspa_dict; ignore:Ppcchar):cint;cdecl;external;
 
     { Update props with all key/value pairs from dict  }
-(* Const before type ignored *)
+
     function pw_properties_update(props:Ppw_properties; dict:Pspa_dict):cint;cdecl;external;
 
     { Update props with all key/value pairs from str  }
-(* Const before type ignored *)
+
     function pw_properties_update_string(props:Ppw_properties; str:pcchar; size:size_t):cint;cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_properties_update_string_checked(props:Ppw_properties; str:pcchar; size:size_t; loc:Pspa_error_location):cint;cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_properties_add(oldprops:Ppw_properties; dict:Pspa_dict):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 (* Const before declarator ignored *)
     function pw_properties_add_keys(oldprops:Ppw_properties; dict:Pspa_dict; keys:Ppcchar):cint;cdecl;external;
 
@@ -103,49 +93,49 @@ in declaration at line 49 *)
 
     procedure pw_properties_free(properties:Ppw_properties);cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_set(properties:Ppw_properties; key:pcchar; value:pcchar):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 (* error 
 		   const char *key, const char *format, ...) SPA_PRINTF_FUNC(3, 4);
 (* error 
 		   const char *key, const char *format, ...) SPA_PRINTF_FUNC(3, 4);
  in declarator_list *)
  in declarator_list *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 (* error 
 		   const char *key, const char *format, va_list args) SPA_PRINTF_FUNC(3,0);
 (* error 
 		   const char *key, const char *format, va_list args) SPA_PRINTF_FUNC(3,0);
  in declarator_list *)
  in declarator_list *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
     function pw_properties_get(properties:Ppw_properties; key:pcchar):pcchar;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_fetch_uint32(properties:Ppw_properties; key:pcchar; value:Puint32_t):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_fetch_int32(properties:Ppw_properties; key:pcchar; value:Pint32_t):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_fetch_uint64(properties:Ppw_properties; key:pcchar; value:Puint64_t):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_fetch_int64(properties:Ppw_properties; key:pcchar; value:Pint64_t):cint;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
     function pw_properties_fetch_bool(properties:Ppw_properties; key:pcchar; value:Pbool):cint;cdecl;external;
 
 (* error 
@@ -224,7 +214,7 @@ in declaration at line 146 *)
       PW_PROPERTIES_FLAG_ENCLOSE = 1 shl 2;      
       PW_PROPERTIES_FLAG_ARRAY = 1 shl 3;      
       PW_PROPERTIES_FLAG_COLORS = 1 shl 4;      
-(* Const before type ignored *)
+
 
     function pw_properties_serialize_dict(f:PFILE; dict:Pspa_dict; flags:uint32_t):cint;cdecl;external;
 

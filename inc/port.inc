@@ -1,13 +1,3 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_port  = ^pw_port;
     Ppw_port_events  = ^pw_port_events;
@@ -60,7 +50,7 @@ in define line 32 *)
       PW_DIRECTION_INPUT = SPA_DIRECTION_INPUT;      
       PW_DIRECTION_OUTPUT = SPA_DIRECTION_OUTPUT;      
     {* Convert a \ref pw_direction to a readable string  }
-(* Const before type ignored *)
+
 
     function pw_direction_as_string(direction:pw_direction):pcchar;cdecl;external;
 

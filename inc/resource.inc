@@ -1,18 +1,8 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_protocol_marshal  = ^pw_protocol_marshal;
     Ppw_resource  = ^pw_resource;
     Ppw_resource_events  = ^pw_resource_events;
-    Pspa_hook  = ^spa_hook;
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
     Puint32_t  = ^uint32_t;
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -94,7 +84,7 @@ in declaration at line 71 *)
     function pw_resource_get_permissions(resource:Ppw_resource):uint32_t;cdecl;external;
 
     {* Get the type and optionally the version of this resource  }
-(* Const before type ignored *)
+
     function pw_resource_get_type(resource:Ppw_resource; version:Puint32_t):pcchar;cdecl;external;
 
     {* Get the protocol used for this resource  }
@@ -105,11 +95,11 @@ in declaration at line 83 *)
     function pw_resource_get_user_data(resource:Ppw_resource):pointer;cdecl;external;
 
     {* Add an event listener  }
-(* Const before type ignored *)
+
     procedure pw_resource_add_listener(resource:Ppw_resource; listener:Pspa_hook; events:Ppw_resource_events; data:pointer);cdecl;external;
 
     {* Set the resource implementation.  }
-(* Const before type ignored *)
+
     procedure pw_resource_add_object_listener(resource:Ppw_resource; listener:Pspa_hook; funcs:pointer; data:pointer);cdecl;external;
 
     {* Generate an ping event for a resource. This will generate a pong event
@@ -128,17 +118,17 @@ in declaration at line 83 *)
     function pw_resource_get_bound_id(resource:Ppw_resource):uint32_t;cdecl;external;
 
     {* Generate an error for a resource  }
-(* Const before type ignored *)
+
     procedure pw_resource_error(resource:Ppw_resource; res:cint; error:pcchar);cdecl;external;
 
-(* Const before type ignored *)
+
 (* error 
 void pw_resource_errorf(struct pw_resource *resource, int res, const char *error, ...) SPA_PRINTF_FUNC(3, 4);
 (* error 
 void pw_resource_errorf(struct pw_resource *resource, int res, const char *error, ...) SPA_PRINTF_FUNC(3, 4);
  in declarator_list *)
  in declarator_list *)
-(* Const before type ignored *)
+
 (* error 
 void pw_resource_errorf_id(struct pw_resource *resource, uint32_t id, int res, const char *error, ...) SPA_PRINTF_FUNC(4, 5);
 (* error 
@@ -150,7 +140,7 @@ void pw_resource_errorf_id(struct pw_resource *resource, uint32_t id, int res, c
 struct spa_hook_list *pw_resource_get_object_listeners(struct pw_resource *resource);
 in declaration at line 120 *)
     {* Get the marshal functions for the resource  }
-(* Const before type ignored *)
+
     function pw_resource_get_marshal(resource:Ppw_resource):Ppw_protocol_marshal;cdecl;external;
 
     {* install a marshal function on a resource  }

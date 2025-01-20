@@ -1,21 +1,11 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
-    Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
     Type
     Ppw_impl_device  = ^pw_impl_device;
     Ppw_impl_device_events  = ^pw_impl_device_events;
     Ppw_properties  = ^pw_properties;
-    Pspa_device  = ^spa_device;
-    Pspa_dict  = ^spa_dict;
-    Pspa_hook  = ^spa_hook;
-    Pspa_pod  = ^spa_pod;
+    Pspa_device  = Pointer; {$WARNING ^spa_device}
+    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
+    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
+    Pspa_pod  = Pointer; {$WARNING ^spa_pod}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -88,16 +78,16 @@ in declaration at line 65 *)
 struct pw_global *pw_impl_device_get_global(struct pw_impl_device *device);
 in declaration at line 68 *)
     {* Add an event listener  }
-(* Const before type ignored *)
+
     procedure pw_impl_device_add_listener(device:Ppw_impl_device; listener:Pspa_hook; events:Ppw_impl_device_events; data:pointer);cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_impl_device_update_properties(device:Ppw_impl_device; dict:Pspa_dict):cint;cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_impl_device_get_properties(device:Ppw_impl_device):Ppw_properties;cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_impl_device_for_each_param(device:Ppw_impl_device; seq:cint; param_id:uint32_t; index:uint32_t; max:uint32_t; 
                filter:Pspa_pod; callback:function (data:pointer; seq:cint; id:uint32_t; index:uint32_t; next:uint32_t; 
                           param:Pspa_pod):cint; data:pointer):cint;cdecl;external;

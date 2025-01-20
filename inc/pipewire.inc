@@ -1,16 +1,6 @@
-
-    { Pointers to basic pascal types, inserted by h2pas conversion program.}
     Type
-      PLongint  = ^Longint;
-      PSmallInt = ^SmallInt;
-      PByte     = ^Byte;
-      PWord     = ^Word;
-      PDWord    = ^DWord;
-      PDouble   = ^Double;
-
-    Type
-    Pspa_handle  = ^spa_handle;
-    Pspa_support  = ^spa_support;
+    Pspa_handle  = Pointer; {$WARNING ^spa_handle}
+    Pspa_support  = Pointer; {$WARNING ^spa_support}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -64,35 +54,35 @@
 
   procedure pw_deinit;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_debug_is_category_enabled(name:pcchar):bool;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_get_application_name:pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_get_prgname:pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_get_user_name:pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_get_host_name:pcchar;cdecl;external;
 
-(* Const before type ignored *)
+
   function pw_get_client_name:pcchar;cdecl;external;
 
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function pw_check_option(option:pcchar; value:pcchar):bool;cdecl;external;
 
 (* error 
 pw_direction_reverse(enum pw_direction direction);
 in declaration at line 78 *)
-(* Const before type ignored *)
+
     function pw_set_domain(domain:pcchar):cint;cdecl;external;
 
-(* Const before type ignored *)
+
     function pw_get_domain:pcchar;cdecl;external;
 
     function pw_get_support(support:Pspa_support; max_support:uint32_t):uint32_t;cdecl;external;
