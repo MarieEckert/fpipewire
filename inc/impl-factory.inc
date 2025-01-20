@@ -65,21 +65,21 @@ in declaration at line 60 *)
     {* Get the factory properties  }
 
 
-    function pw_impl_factory_get_properties(factory:Ppw_impl_factory):Ppw_properties;cdecl;external;
+    function pw_impl_factory_get_properties(factory:Ppw_impl_factory):Ppw_properties;cdecl;external External_library name 'pw_impl_factory_get_properties';
 
     {* Get the factory info  }
 
-    function pw_impl_factory_get_info(factory:Ppw_impl_factory):Ppw_factory_info;cdecl;external;
+    function pw_impl_factory_get_info(factory:Ppw_impl_factory):Ppw_factory_info;cdecl;external External_library name 'pw_impl_factory_get_info';
 
     {* Update the factory properties  }
 
-    function pw_impl_factory_update_properties(factory:Ppw_impl_factory; dict:Pspa_dict):cint;cdecl;external;
+    function pw_impl_factory_update_properties(factory:Ppw_impl_factory; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_impl_factory_update_properties';
 
-    function pw_impl_factory_register(factory:Ppw_impl_factory; properties:Ppw_properties):cint;cdecl;external;
+    function pw_impl_factory_register(factory:Ppw_impl_factory; properties:Ppw_properties):cint;cdecl;external External_library name 'pw_impl_factory_register';
 
-    procedure pw_impl_factory_destroy(factory:Ppw_impl_factory);cdecl;external;
+    procedure pw_impl_factory_destroy(factory:Ppw_impl_factory);cdecl;external External_library name 'pw_impl_factory_destroy';
 
-    function pw_impl_factory_get_user_data(factory:Ppw_impl_factory):pointer;cdecl;external;
+    function pw_impl_factory_get_user_data(factory:Ppw_impl_factory):pointer;cdecl;external External_library name 'pw_impl_factory_get_user_data';
 
     {* Get the global of this factory  }
 (* error 
@@ -87,14 +87,14 @@ struct pw_global *pw_impl_factory_get_global(struct pw_impl_factory *factory);
 in declaration at line 79 *)
     {* Add an event listener  }
 
-    procedure pw_impl_factory_add_listener(factory:Ppw_impl_factory; listener:Pspa_hook; events:Ppw_impl_factory_events; data:pointer);cdecl;external;
+    procedure pw_impl_factory_add_listener(factory:Ppw_impl_factory; listener:Pspa_hook; events:Ppw_impl_factory_events; data:pointer);cdecl;external External_library name 'pw_impl_factory_add_listener';
 
 
-    procedure pw_impl_factory_set_implementation(factory:Ppw_impl_factory; implementation:Ppw_impl_factory_implementation; data:pointer);cdecl;external;
+    procedure pw_impl_factory_set_implementation(factory:Ppw_impl_factory; implementation:Ppw_impl_factory_implementation; data:pointer);cdecl;external External_library name 'pw_impl_factory_set_implementation';
 
 
     function pw_impl_factory_create_object(factory:Ppw_impl_factory; resource:Ppw_resource; _type:pcchar; version:uint32_t; properties:Ppw_properties; 
-               new_id:uint32_t):pointer;cdecl;external;
+               new_id:uint32_t):pointer;cdecl;external External_library name 'pw_impl_factory_create_object';
 
     {* Find a factory by name  }
 (* error 

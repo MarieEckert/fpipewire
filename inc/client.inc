@@ -66,7 +66,7 @@ struct pw_client_info *
 in declaration at line 52 *)
     {* Free a \ref pw_client_info  }
 
-    procedure pw_client_info_free(info:Ppw_client_info);cdecl;external;
+    procedure pw_client_info_free(info:Ppw_client_info);cdecl;external External_library name 'pw_client_info_free';
 
     const
       PW_CLIENT_EVENT_INFO = 0;      

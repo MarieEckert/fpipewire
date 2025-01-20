@@ -30,7 +30,7 @@ struct spa_thread_utils *pw_thread_utils_get(void);
 in declaration at line 29 *)
 
 
-    function pw_thread_fill_attr(props:Pspa_dict; attr:pointer):pointer;cdecl;external;
+    function pw_thread_fill_attr(props:Pspa_dict; attr:pointer):pointer;cdecl;external External_library name 'pw_thread_fill_attr';
 
 (* error 
 #define pw_thread_utils_create(...)		spa_thread_utils_create(pw_thread_utils_get(), ##__VA_ARGS__)

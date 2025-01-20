@@ -63,7 +63,7 @@ in define line 34 *)
     {* Convert a \ref pw_link_state to a readable string  }
 
 
-    function pw_link_state_as_string(state:pw_link_state):pcchar;cdecl;external;
+    function pw_link_state_as_string(state:pw_link_state):pcchar;cdecl;external External_library name 'pw_link_state_as_string';
 
     {* The link information. Extra information can be added in later versions  }
     {*< id of the global  }
@@ -92,7 +92,7 @@ in declaration at line 72 *)
 struct pw_link_info *
 in declaration at line 76 *)
 
-    procedure pw_link_info_free(info:Ppw_link_info);cdecl;external;
+    procedure pw_link_info_free(info:Ppw_link_info);cdecl;external External_library name 'pw_link_info_free';
 
     const
       PW_LINK_EVENT_INFO = 0;      

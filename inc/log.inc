@@ -36,14 +36,14 @@
    * in pw_init() but you can install a custom logger before calling
    * pw_init().  }
 
-  procedure pw_log_set(log:Pspa_log);cdecl;external;
+  procedure pw_log_set(log:Pspa_log);cdecl;external External_library name 'pw_log_set';
 
   {* Get the log interface  }
 (* error 
 struct spa_log *pw_log_get(void);
 in declaration at line 39 *)
     {* Configure the logging level  }
-    procedure pw_log_set_level(level:spa_log_level);cdecl;external;
+    procedure pw_log_set_level(level:spa_log_level);cdecl;external External_library name 'pw_log_set_level';
 
     {*
      * Configure the logging level using a string
@@ -52,7 +52,7 @@ in declaration at line 39 *)
      * \since 1.1.0
       }
 
-    function pw_log_set_level_string(str:pcchar):cint;cdecl;external;
+    function pw_log_set_level_string(str:pcchar):cint;cdecl;external External_library name 'pw_log_set_level_string';
 
     {* Log a message for a topic  }
 
@@ -159,14 +159,14 @@ in declaration at line 133 *)
      *
      * \since 1.1.0
       }
-    procedure pw_log_topic_register(t:Pspa_log_topic);cdecl;external;
+    procedure pw_log_topic_register(t:Pspa_log_topic);cdecl;external External_library name 'pw_log_topic_register';
 
     {*
      * Unregister log topic. This function is threadsafe.
      *
      * \since 1.1.0
       }
-    procedure pw_log_topic_unregister(t:Pspa_log_topic);cdecl;external;
+    procedure pw_log_topic_unregister(t:Pspa_log_topic);cdecl;external External_library name 'pw_log_topic_unregister';
 
     {* Check if a loglevel is enabled  }
     { was #define dname(params) para_def_expr }

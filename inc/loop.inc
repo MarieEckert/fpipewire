@@ -49,10 +49,10 @@
 struct pw_loop *
 in declaration at line 38 *)
 
-    procedure pw_loop_destroy(loop:Ppw_loop);cdecl;external;
+    procedure pw_loop_destroy(loop:Ppw_loop);cdecl;external External_library name 'pw_loop_destroy';
 
 
-    function pw_loop_set_name(loop:Ppw_loop; name:pcchar):cint;cdecl;external;
+    function pw_loop_set_name(loop:Ppw_loop; name:pcchar):cint;cdecl;external External_library name 'pw_loop_set_name';
 
 (* error 
 #define pw_loop_add_source(l,...)	spa_loop_add_source((l)->loop,__VA_ARGS__)

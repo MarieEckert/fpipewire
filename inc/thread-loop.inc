@@ -107,53 +107,53 @@ struct pw_thread_loop *
 in declaration at line 98 *)
     {* Destroy a thread loop  }
 
-    procedure pw_thread_loop_destroy(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_destroy(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_destroy';
 
     {* Add an event listener  }
 
-    procedure pw_thread_loop_add_listener(loop:Ppw_thread_loop; listener:Pspa_hook; events:Ppw_thread_loop_events; data:pointer);cdecl;external;
+    procedure pw_thread_loop_add_listener(loop:Ppw_thread_loop; listener:Pspa_hook; events:Ppw_thread_loop_events; data:pointer);cdecl;external External_library name 'pw_thread_loop_add_listener';
 
     {* Get the loop implementation of the thread loop  }
 (* error 
 struct pw_loop * pw_thread_loop_get_loop(struct pw_thread_loop *loop);
 in declaration at line 110 *)
     {* Start the thread loop  }
-    function pw_thread_loop_start(loop:Ppw_thread_loop):cint;cdecl;external;
+    function pw_thread_loop_start(loop:Ppw_thread_loop):cint;cdecl;external External_library name 'pw_thread_loop_start';
 
     {* Stop the thread loop  }
-    procedure pw_thread_loop_stop(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_stop(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_stop';
 
     {* Lock the loop. This ensures exclusive ownership of the loop  }
-    procedure pw_thread_loop_lock(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_lock(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_lock';
 
     {* Unlock the loop  }
-    procedure pw_thread_loop_unlock(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_unlock(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_unlock';
 
     {* Release the lock and wait until some thread calls \ref pw_thread_loop_signal  }
-    procedure pw_thread_loop_wait(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_wait(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_wait';
 
     {* Release the lock and wait a maximum of 'wait_max_sec' seconds
      *  until some thread calls \ref pw_thread_loop_signal or time out  }
-    function pw_thread_loop_timed_wait(loop:Ppw_thread_loop; wait_max_sec:cint):cint;cdecl;external;
+    function pw_thread_loop_timed_wait(loop:Ppw_thread_loop; wait_max_sec:cint):cint;cdecl;external External_library name 'pw_thread_loop_timed_wait';
 
     {* Get a struct timespec suitable for \ref pw_thread_loop_timed_wait_full.
      * Since: 0.3.7  }
-    function pw_thread_loop_get_time(loop:Ppw_thread_loop; abstime:Ptimespec; timeout:int64_t):cint;cdecl;external;
+    function pw_thread_loop_get_time(loop:Ppw_thread_loop; abstime:Ptimespec; timeout:int64_t):cint;cdecl;external External_library name 'pw_thread_loop_get_time';
 
     {* Release the lock and wait up to \a abstime until some thread calls
      * \ref pw_thread_loop_signal. Use \ref pw_thread_loop_get_time to make a timeout.
      * Since: 0.3.7  }
 
-    function pw_thread_loop_timed_wait_full(loop:Ppw_thread_loop; abstime:Ptimespec):cint;cdecl;external;
+    function pw_thread_loop_timed_wait_full(loop:Ppw_thread_loop; abstime:Ptimespec):cint;cdecl;external External_library name 'pw_thread_loop_timed_wait_full';
 
     {* Signal all threads waiting with \ref pw_thread_loop_wait  }
-    procedure pw_thread_loop_signal(loop:Ppw_thread_loop; wait_for_accept:bool);cdecl;external;
+    procedure pw_thread_loop_signal(loop:Ppw_thread_loop; wait_for_accept:bool);cdecl;external External_library name 'pw_thread_loop_signal';
 
     {* Signal all threads executing \ref pw_thread_loop_signal with wait_for_accept  }
-    procedure pw_thread_loop_accept(loop:Ppw_thread_loop);cdecl;external;
+    procedure pw_thread_loop_accept(loop:Ppw_thread_loop);cdecl;external External_library name 'pw_thread_loop_accept';
 
     {* Check if inside the thread  }
-    function pw_thread_loop_in_thread(loop:Ppw_thread_loop):bool;cdecl;external;
+    function pw_thread_loop_in_thread(loop:Ppw_thread_loop):bool;cdecl;external External_library name 'pw_thread_loop_in_thread';
 
     {*
      * \

@@ -1,14 +1,3 @@
-    Type
-    Ppw_core  = ^pw_core;
-    Ppw_impl_core  = ^pw_impl_core;
-    Ppw_protocol  = ^pw_protocol;
-    Ppw_protocol_client  = ^pw_protocol_client;
-    Ppw_protocol_events  = ^pw_protocol_events;
-    Ppw_protocol_implementation  = ^pw_protocol_implementation;
-    Ppw_protocol_marshal  = ^pw_protocol_marshal;
-    Ppw_protocol_server  = ^pw_protocol_server;
-    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
-    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -160,28 +149,28 @@ in define line 109 *)
 struct pw_protocol *pw_protocol_new(struct pw_context *context, const char *name, size_t user_data_size);
 in declaration at line 111 *)
 
-    procedure pw_protocol_destroy(protocol:Ppw_protocol);cdecl;external;
+    procedure pw_protocol_destroy(protocol:Ppw_protocol);cdecl;external External_library name 'pw_protocol_destroy';
 
 (* error 
 struct pw_context *pw_protocol_get_context(struct pw_protocol *protocol);
 in declaration at line 115 *)
-    function pw_protocol_get_user_data(protocol:Ppw_protocol):pointer;cdecl;external;
+    function pw_protocol_get_user_data(protocol:Ppw_protocol):pointer;cdecl;external External_library name 'pw_protocol_get_user_data';
 
 
-    function pw_protocol_get_implementation(protocol:Ppw_protocol):Ppw_protocol_implementation;cdecl;external;
+    function pw_protocol_get_implementation(protocol:Ppw_protocol):Ppw_protocol_implementation;cdecl;external External_library name 'pw_protocol_get_implementation';
 
 
-    function pw_protocol_get_extension(protocol:Ppw_protocol):pointer;cdecl;external;
+    function pw_protocol_get_extension(protocol:Ppw_protocol):pointer;cdecl;external External_library name 'pw_protocol_get_extension';
 
 
-    procedure pw_protocol_add_listener(protocol:Ppw_protocol; listener:Pspa_hook; events:Ppw_protocol_events; data:pointer);cdecl;external;
+    procedure pw_protocol_add_listener(protocol:Ppw_protocol; listener:Pspa_hook; events:Ppw_protocol_events; data:pointer);cdecl;external External_library name 'pw_protocol_add_listener';
 
 
-    function pw_protocol_add_marshal(protocol:Ppw_protocol; marshal:Ppw_protocol_marshal):cint;cdecl;external;
+    function pw_protocol_add_marshal(protocol:Ppw_protocol; marshal:Ppw_protocol_marshal):cint;cdecl;external External_library name 'pw_protocol_add_marshal';
 
 
 
-    function pw_protocol_get_marshal(protocol:Ppw_protocol; _type:pcchar; version:uint32_t; flags:uint32_t):Ppw_protocol_marshal;cdecl;external;
+    function pw_protocol_get_marshal(protocol:Ppw_protocol; _type:pcchar; version:uint32_t; flags:uint32_t):Ppw_protocol_marshal;cdecl;external External_library name 'pw_protocol_get_marshal';
 
 (* error 
 struct pw_protocol * pw_context_find_protocol(struct pw_context *context, const char *name);

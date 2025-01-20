@@ -122,7 +122,7 @@ struct pw_proxy *
     {* Add an event listener to proxy  }
 
 
-    procedure pw_proxy_add_listener(proxy:Ppw_proxy; listener:Pspa_hook; events:Ppw_proxy_events; data:pointer);cdecl;external;
+    procedure pw_proxy_add_listener(proxy:Ppw_proxy; listener:Pspa_hook; events:Ppw_proxy_events; data:pointer);cdecl;external External_library name 'pw_proxy_add_listener';
 
     {* Add a listener for the events received from the remote object. The
       * events depend on the type of the remote object type.  }
@@ -130,24 +130,24 @@ struct pw_proxy *
     {*< listener  }
 
     {*< proxied functions  }
-    {*< data passed to events  }    procedure pw_proxy_add_object_listener(proxy:Ppw_proxy; listener:Pspa_hook; funcs:pointer; data:pointer);cdecl;external;
+    {*< data passed to events  }    procedure pw_proxy_add_object_listener(proxy:Ppw_proxy; listener:Pspa_hook; funcs:pointer; data:pointer);cdecl;external External_library name 'pw_proxy_add_object_listener';
 
     {* destroy a proxy  }
-    procedure pw_proxy_destroy(proxy:Ppw_proxy);cdecl;external;
+    procedure pw_proxy_destroy(proxy:Ppw_proxy);cdecl;external External_library name 'pw_proxy_destroy';
 
-    procedure pw_proxy_ref(proxy:Ppw_proxy);cdecl;external;
+    procedure pw_proxy_ref(proxy:Ppw_proxy);cdecl;external External_library name 'pw_proxy_ref';
 
-    procedure pw_proxy_unref(proxy:Ppw_proxy);cdecl;external;
+    procedure pw_proxy_unref(proxy:Ppw_proxy);cdecl;external External_library name 'pw_proxy_unref';
 
     {* Get the user_data. The size was given in \ref pw_proxy_new  }
-    function pw_proxy_get_user_data(proxy:Ppw_proxy):pointer;cdecl;external;
+    function pw_proxy_get_user_data(proxy:Ppw_proxy):pointer;cdecl;external External_library name 'pw_proxy_get_user_data';
 
     {* Get the local id of the proxy  }
-    function pw_proxy_get_id(proxy:Ppw_proxy):uint32_t;cdecl;external;
+    function pw_proxy_get_id(proxy:Ppw_proxy):uint32_t;cdecl;external External_library name 'pw_proxy_get_id';
 
     {* Get the type and version of the proxy  }
 
-    function pw_proxy_get_type(proxy:Ppw_proxy; version:Puint32_t):pcchar;cdecl;external;
+    function pw_proxy_get_type(proxy:Ppw_proxy; version:Puint32_t):pcchar;cdecl;external External_library name 'pw_proxy_get_type';
 
     {* Get the protocol used for the proxy  }
 (* error 
@@ -155,19 +155,19 @@ struct pw_protocol *pw_proxy_get_protocol(struct pw_proxy *proxy);
 in declaration at line 153 *)
     {* Generate an sync method for a proxy. This will generate a done event
      * with the same seq number of the reply.  }
-    function pw_proxy_sync(proxy:Ppw_proxy; seq:cint):cint;cdecl;external;
+    function pw_proxy_sync(proxy:Ppw_proxy; seq:cint):cint;cdecl;external External_library name 'pw_proxy_sync';
 
     {* Set the global id this proxy is bound to. This is usually used internally
      * and will also emit the bound event  }
-    function pw_proxy_set_bound_id(proxy:Ppw_proxy; global_id:uint32_t):cint;cdecl;external;
+    function pw_proxy_set_bound_id(proxy:Ppw_proxy; global_id:uint32_t):cint;cdecl;external External_library name 'pw_proxy_set_bound_id';
 
     {* Get the global id bound to this proxy of SPA_ID_INVALID when not bound
      * to a global  }
-    function pw_proxy_get_bound_id(proxy:Ppw_proxy):uint32_t;cdecl;external;
+    function pw_proxy_get_bound_id(proxy:Ppw_proxy):uint32_t;cdecl;external External_library name 'pw_proxy_get_bound_id';
 
     {* Generate an error for a proxy  }
 
-    function pw_proxy_error(proxy:Ppw_proxy; res:cint; error:pcchar):cint;cdecl;external;
+    function pw_proxy_error(proxy:Ppw_proxy; res:cint; error:pcchar):cint;cdecl;external External_library name 'pw_proxy_error';
 
 
 (* error 
@@ -182,10 +182,10 @@ struct spa_hook_list *pw_proxy_get_object_listeners(struct pw_proxy *proxy);
 in declaration at line 171 *)
     {* Get the marshal functions for the proxy  }
 
-    function pw_proxy_get_marshal(proxy:Ppw_proxy):Ppw_protocol_marshal;cdecl;external;
+    function pw_proxy_get_marshal(proxy:Ppw_proxy):Ppw_protocol_marshal;cdecl;external External_library name 'pw_proxy_get_marshal';
 
     {* Install a marshal function on a proxy  }
-    function pw_proxy_install_marshal(proxy:Ppw_proxy; implementor:bool):cint;cdecl;external;
+    function pw_proxy_install_marshal(proxy:Ppw_proxy; implementor:bool):cint;cdecl;external External_library name 'pw_proxy_install_marshal';
 
 (* error 
 #define pw_proxy_notify(p,type,event,version,...)			\

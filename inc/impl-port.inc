@@ -90,36 +90,36 @@ in declaration at line 89 *)
     {* Get the port properties  }
 
 
-    function pw_impl_port_get_properties(port:Ppw_impl_port):Ppw_properties;cdecl;external;
+    function pw_impl_port_get_properties(port:Ppw_impl_port):Ppw_properties;cdecl;external External_library name 'pw_impl_port_get_properties';
 
     {* Update the port properties  }
 
-    function pw_impl_port_update_properties(port:Ppw_impl_port; dict:Pspa_dict):cint;cdecl;external;
+    function pw_impl_port_update_properties(port:Ppw_impl_port; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_impl_port_update_properties';
 
     {* Get the port info  }
 
-    function pw_impl_port_get_info(port:Ppw_impl_port):Ppw_port_info;cdecl;external;
+    function pw_impl_port_get_info(port:Ppw_impl_port):Ppw_port_info;cdecl;external External_library name 'pw_impl_port_get_info';
 
     {* Get the port id  }
-    function pw_impl_port_get_id(port:Ppw_impl_port):uint32_t;cdecl;external;
+    function pw_impl_port_get_id(port:Ppw_impl_port):uint32_t;cdecl;external External_library name 'pw_impl_port_get_id';
 
     {* Get the port state as a string  }
 
-    function pw_impl_port_state_as_string(state:pw_impl_port_state):pcchar;cdecl;external;
+    function pw_impl_port_state_as_string(state:pw_impl_port_state):pcchar;cdecl;external External_library name 'pw_impl_port_state_as_string';
 
     {* Get the port parent node or NULL when not yet set  }
 (* error 
 struct pw_impl_node *pw_impl_port_get_node(struct pw_impl_port *port);
 in declaration at line 107 *)
     {* check is a port has links, return 0 if not, 1 if it is linked  }
-    function pw_impl_port_is_linked(port:Ppw_impl_port):cint;cdecl;external;
+    function pw_impl_port_is_linked(port:Ppw_impl_port):cint;cdecl;external External_library name 'pw_impl_port_is_linked';
 
     {* Add a port to a node  }
-    function pw_impl_port_add(port:Ppw_impl_port; node:Ppw_impl_node):cint;cdecl;external;
+    function pw_impl_port_add(port:Ppw_impl_port; node:Ppw_impl_node):cint;cdecl;external External_library name 'pw_impl_port_add';
 
     {* Add an event listener on the port  }
 
-    procedure pw_impl_port_add_listener(port:Ppw_impl_port; listener:Pspa_hook; events:Ppw_impl_port_events; data:pointer);cdecl;external;
+    procedure pw_impl_port_add_listener(port:Ppw_impl_port; listener:Pspa_hook; events:Ppw_impl_port_events; data:pointer);cdecl;external External_library name 'pw_impl_port_add_listener';
 
     {*
      * \

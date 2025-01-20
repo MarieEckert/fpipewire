@@ -34,13 +34,13 @@
 struct pw_work_queue *
 in declaration at line 27 *)
 
-    procedure pw_work_queue_destroy(queue:Ppw_work_queue);cdecl;external;
+    procedure pw_work_queue_destroy(queue:Ppw_work_queue);cdecl;external External_library name 'pw_work_queue_destroy';
 
-    function pw_work_queue_add(queue:Ppw_work_queue; obj:pointer; res:cint; func:pw_work_func_t; data:pointer):uint32_t;cdecl;external;
+    function pw_work_queue_add(queue:Ppw_work_queue; obj:pointer; res:cint; func:pw_work_func_t; data:pointer):uint32_t;cdecl;external External_library name 'pw_work_queue_add';
 
-    function pw_work_queue_cancel(queue:Ppw_work_queue; obj:pointer; id:uint32_t):cint;cdecl;external;
+    function pw_work_queue_cancel(queue:Ppw_work_queue; obj:pointer; id:uint32_t):cint;cdecl;external External_library name 'pw_work_queue_cancel';
 
-    function pw_work_queue_complete(queue:Ppw_work_queue; obj:pointer; seq:uint32_t; res:cint):cint;cdecl;external;
+    function pw_work_queue_complete(queue:Ppw_work_queue; obj:pointer; seq:uint32_t; res:cint):cint;cdecl;external External_library name 'pw_work_queue_complete';
 
     {*
      * \

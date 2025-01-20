@@ -65,15 +65,15 @@ struct pw_impl_link *
   {*< extra properties  }  {*< extra user data size  }in declaration at line 61 *)
     {* Destroy a link  }
 
-    procedure pw_impl_link_destroy(link:Ppw_impl_link);cdecl;external;
+    procedure pw_impl_link_destroy(link:Ppw_impl_link);cdecl;external External_library name 'pw_impl_link_destroy';
 
     {* Add an event listener to \a link  }
 
-    procedure pw_impl_link_add_listener(link:Ppw_impl_link; listener:Pspa_hook; events:Ppw_impl_link_events; data:pointer);cdecl;external;
+    procedure pw_impl_link_add_listener(link:Ppw_impl_link; listener:Pspa_hook; events:Ppw_impl_link_events; data:pointer);cdecl;external External_library name 'pw_impl_link_add_listener';
 
     {* Finish link configuration and register  }
     {*< the link to register  }
-    {*< extra properties  }    function pw_impl_link_register(link:Ppw_impl_link; properties:Ppw_properties):cint;cdecl;external;
+    {*< extra properties  }    function pw_impl_link_register(link:Ppw_impl_link; properties:Ppw_properties):cint;cdecl;external External_library name 'pw_impl_link_register';
 
     {* Get the context of a link  }
 (* error 
@@ -81,11 +81,11 @@ struct pw_context *pw_impl_link_get_context(struct pw_impl_link *link);
 in declaration at line 77 *)
     {* Get the user_data of a link, the size of the memory is given when
       * constructing the link  }
-    function pw_impl_link_get_user_data(link:Ppw_impl_link):pointer;cdecl;external;
+    function pw_impl_link_get_user_data(link:Ppw_impl_link):pointer;cdecl;external External_library name 'pw_impl_link_get_user_data';
 
     {* Get the link info  }
 
-    function pw_impl_link_get_info(link:Ppw_impl_link):Ppw_link_info;cdecl;external;
+    function pw_impl_link_get_info(link:Ppw_impl_link):Ppw_link_info;cdecl;external External_library name 'pw_impl_link_get_info';
 
     {* Get the global of the link  }
 (* error 

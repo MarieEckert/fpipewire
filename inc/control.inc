@@ -52,7 +52,7 @@ in declaration at line 46 *)
      * Each listener must be removed, but they may be removed in any order.  }
 
 
-    procedure pw_control_add_listener(control:Ppw_control; listener:Pspa_hook; events:Ppw_control_events; data:pointer);cdecl;external;
+    procedure pw_control_add_listener(control:Ppw_control; listener:Pspa_hook; events:Ppw_control_events; data:pointer);cdecl;external External_library name 'pw_control_add_listener';
 
     {*
      * \

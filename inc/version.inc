@@ -22,11 +22,11 @@
   {* Return the version of the library the current application is
    * linked to.  }
 
-  function pw_get_library_version:pcchar;cdecl;external;
+  function pw_get_library_version:pcchar;cdecl;external External_library name 'pw_get_library_version';
 
   {* Return TRUE if the currently linked PipeWire library version is equal
    * or newer than the specified version. Since 0.3.75  }
-  function pw_check_library_version(major:cint; minor:cint; micro:cint):bool;cdecl;external;
+  function pw_check_library_version(major:cint; minor:cint; micro:cint):bool;cdecl;external External_library name 'pw_check_library_version';
 
   {* The current API version. Versions prior to 0.2.0 have
    * PW_API_VERSION undefined. Please note that this is only ever

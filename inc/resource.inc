@@ -67,59 +67,59 @@ struct pw_resource *
   {*< extra user data size  }in declaration at line 61 *)
     {* Destroy a resource  }
 
-    procedure pw_resource_destroy(resource:Ppw_resource);cdecl;external;
+    procedure pw_resource_destroy(resource:Ppw_resource);cdecl;external External_library name 'pw_resource_destroy';
 
     {* Remove a resource, like pw_resource_destroy but without sending a
      * remove_id message to the client  }
-    procedure pw_resource_remove(resource:Ppw_resource);cdecl;external;
+    procedure pw_resource_remove(resource:Ppw_resource);cdecl;external External_library name 'pw_resource_remove';
 
     {* Get the client owning this resource  }
 (* error 
 struct pw_impl_client *pw_resource_get_client(struct pw_resource *resource);
 in declaration at line 71 *)
     {* Get the unique id of this resource  }
-    function pw_resource_get_id(resource:Ppw_resource):uint32_t;cdecl;external;
+    function pw_resource_get_id(resource:Ppw_resource):uint32_t;cdecl;external External_library name 'pw_resource_get_id';
 
     {* Get the permissions of this resource  }
-    function pw_resource_get_permissions(resource:Ppw_resource):uint32_t;cdecl;external;
+    function pw_resource_get_permissions(resource:Ppw_resource):uint32_t;cdecl;external External_library name 'pw_resource_get_permissions';
 
     {* Get the type and optionally the version of this resource  }
 
-    function pw_resource_get_type(resource:Ppw_resource; version:Puint32_t):pcchar;cdecl;external;
+    function pw_resource_get_type(resource:Ppw_resource; version:Puint32_t):pcchar;cdecl;external External_library name 'pw_resource_get_type';
 
     {* Get the protocol used for this resource  }
 (* error 
 struct pw_protocol *pw_resource_get_protocol(struct pw_resource *resource);
 in declaration at line 83 *)
     {* Get the user data for the resource, the size was given in \ref pw_resource_new  }
-    function pw_resource_get_user_data(resource:Ppw_resource):pointer;cdecl;external;
+    function pw_resource_get_user_data(resource:Ppw_resource):pointer;cdecl;external External_library name 'pw_resource_get_user_data';
 
     {* Add an event listener  }
 
-    procedure pw_resource_add_listener(resource:Ppw_resource; listener:Pspa_hook; events:Ppw_resource_events; data:pointer);cdecl;external;
+    procedure pw_resource_add_listener(resource:Ppw_resource; listener:Pspa_hook; events:Ppw_resource_events; data:pointer);cdecl;external External_library name 'pw_resource_add_listener';
 
     {* Set the resource implementation.  }
 
-    procedure pw_resource_add_object_listener(resource:Ppw_resource; listener:Pspa_hook; funcs:pointer; data:pointer);cdecl;external;
+    procedure pw_resource_add_object_listener(resource:Ppw_resource; listener:Pspa_hook; funcs:pointer; data:pointer);cdecl;external External_library name 'pw_resource_add_object_listener';
 
     {* Generate an ping event for a resource. This will generate a pong event
      * with the same \a sequence number in the return value.  }
-    function pw_resource_ping(resource:Ppw_resource; seq:cint):cint;cdecl;external;
+    function pw_resource_ping(resource:Ppw_resource; seq:cint):cint;cdecl;external External_library name 'pw_resource_ping';
 
     {* ref/unref a resource, Since 0.3.52  }
-    procedure pw_resource_ref(resource:Ppw_resource);cdecl;external;
+    procedure pw_resource_ref(resource:Ppw_resource);cdecl;external External_library name 'pw_resource_ref';
 
-    procedure pw_resource_unref(resource:Ppw_resource);cdecl;external;
+    procedure pw_resource_unref(resource:Ppw_resource);cdecl;external External_library name 'pw_resource_unref';
 
     {* Notify global id this resource is bound to  }
-    function pw_resource_set_bound_id(resource:Ppw_resource; global_id:uint32_t):cint;cdecl;external;
+    function pw_resource_set_bound_id(resource:Ppw_resource; global_id:uint32_t):cint;cdecl;external External_library name 'pw_resource_set_bound_id';
 
     {* Get the global id this resource is bound to or SPA_ID_INVALID when not bound  }
-    function pw_resource_get_bound_id(resource:Ppw_resource):uint32_t;cdecl;external;
+    function pw_resource_get_bound_id(resource:Ppw_resource):uint32_t;cdecl;external External_library name 'pw_resource_get_bound_id';
 
     {* Generate an error for a resource  }
 
-    procedure pw_resource_error(resource:Ppw_resource; res:cint; error:pcchar);cdecl;external;
+    procedure pw_resource_error(resource:Ppw_resource; res:cint; error:pcchar);cdecl;external External_library name 'pw_resource_error';
 
 
 (* error 
@@ -141,10 +141,10 @@ struct spa_hook_list *pw_resource_get_object_listeners(struct pw_resource *resou
 in declaration at line 120 *)
     {* Get the marshal functions for the resource  }
 
-    function pw_resource_get_marshal(resource:Ppw_resource):Ppw_protocol_marshal;cdecl;external;
+    function pw_resource_get_marshal(resource:Ppw_resource):Ppw_protocol_marshal;cdecl;external External_library name 'pw_resource_get_marshal';
 
     {* install a marshal function on a resource  }
-    function pw_resource_install_marshal(resource:Ppw_resource; implementor:bool):cint;cdecl;external;
+    function pw_resource_install_marshal(resource:Ppw_resource; implementor:bool):cint;cdecl;external External_library name 'pw_resource_install_marshal';
 
 (* error 
 #define pw_resource_notify(r,type,event,version,...)			\

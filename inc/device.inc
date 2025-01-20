@@ -61,7 +61,7 @@ struct pw_device_info *
 in declaration at line 52 *)
     {* Free a \ref pw_device_info  }
 
-    procedure pw_device_info_free(info:Ppw_device_info);cdecl;external;
+    procedure pw_device_info_free(info:Ppw_device_info);cdecl;external External_library name 'pw_device_info_free';
 
     const
       PW_DEVICE_EVENT_INFO = 0;      

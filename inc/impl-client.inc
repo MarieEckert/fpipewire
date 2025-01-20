@@ -105,33 +105,33 @@ struct pw_impl_client *
   {*< extra user data size  }in declaration at line 105 *)
     {* Destroy a previously created client  }
 
-    procedure pw_impl_client_destroy(client:Ppw_impl_client);cdecl;external;
+    procedure pw_impl_client_destroy(client:Ppw_impl_client);cdecl;external External_library name 'pw_impl_client_destroy';
 
     {* Finish configuration and register a client  }
     {*< the client to register  }
-    {*< extra properties  }    function pw_impl_client_register(client:Ppw_impl_client; properties:Ppw_properties):cint;cdecl;external;
+    {*< extra properties  }    function pw_impl_client_register(client:Ppw_impl_client; properties:Ppw_properties):cint;cdecl;external External_library name 'pw_impl_client_register';
 
     {* Get the client user data  }
-    function pw_impl_client_get_user_data(client:Ppw_impl_client):pointer;cdecl;external;
+    function pw_impl_client_get_user_data(client:Ppw_impl_client):pointer;cdecl;external External_library name 'pw_impl_client_get_user_data';
 
     {* Get the client information  }
 
-    function pw_impl_client_get_info(client:Ppw_impl_client):Ppw_client_info;cdecl;external;
+    function pw_impl_client_get_info(client:Ppw_impl_client):Ppw_client_info;cdecl;external External_library name 'pw_impl_client_get_info';
 
     {* Update the client properties  }
 
-    function pw_impl_client_update_properties(client:Ppw_impl_client; dict:Pspa_dict):cint;cdecl;external;
+    function pw_impl_client_update_properties(client:Ppw_impl_client; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_impl_client_update_properties';
 
     {* Update the client permissions  }
 
-    function pw_impl_client_update_permissions(client:Ppw_impl_client; n_permissions:uint32_t; permissions:Ppw_permission):cint;cdecl;external;
+    function pw_impl_client_update_permissions(client:Ppw_impl_client; n_permissions:uint32_t; permissions:Ppw_permission):cint;cdecl;external External_library name 'pw_impl_client_update_permissions';
 
     {* check if a client has permissions for global_id, Since 0.3.9  }
-    function pw_impl_client_check_permissions(client:Ppw_impl_client; global_id:uint32_t; permissions:uint32_t):cint;cdecl;external;
+    function pw_impl_client_check_permissions(client:Ppw_impl_client; global_id:uint32_t; permissions:uint32_t):cint;cdecl;external External_library name 'pw_impl_client_check_permissions';
 
     {* Get the client properties  }
 
-    function pw_impl_client_get_properties(client:Ppw_impl_client):Ppw_properties;cdecl;external;
+    function pw_impl_client_get_properties(client:Ppw_impl_client):Ppw_properties;cdecl;external External_library name 'pw_impl_client_get_properties';
 
     {* Get the context used to create this client  }
 (* error 
@@ -159,11 +159,11 @@ struct pw_mempool *pw_impl_client_get_mempool(struct pw_impl_client *client);
 in declaration at line 149 *)
     {* listen to events from this client  }
 
-    procedure pw_impl_client_add_listener(client:Ppw_impl_client; listener:Pspa_hook; events:Ppw_impl_client_events; data:pointer);cdecl;external;
+    procedure pw_impl_client_add_listener(client:Ppw_impl_client; listener:Pspa_hook; events:Ppw_impl_client_events; data:pointer);cdecl;external External_library name 'pw_impl_client_add_listener';
 
     {* Mark the client busy. This can be used when an asynchronous operation is
       * started and no further processing is allowed to happen for the client  }
-    procedure pw_impl_client_set_busy(client:Ppw_impl_client; busy:bool);cdecl;external;
+    procedure pw_impl_client_set_busy(client:Ppw_impl_client; busy:bool);cdecl;external External_library name 'pw_impl_client_set_busy';
 
     {*
      * \

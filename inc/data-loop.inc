@@ -1,8 +1,7 @@
     Type
-    Ppw_data_loop  = ^pw_data_loop;
-    Ppw_data_loop_events  = ^pw_data_loop_events;
     Pspa_hook  = Pointer; {$WARNING ^spa_hook}
     Pspa_thread_utils  = Pointer; {$WARNING ^spa_thread_utils}
+    spa_invoke_func_t = Pointer; {$WARNING spa_invoke_func_t}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -54,14 +53,14 @@ in declaration at line 42 *)
     {* Add an event listener to loop  }
 
 
-    procedure pw_data_loop_add_listener(loop:Ppw_data_loop; listener:Pspa_hook; events:Ppw_data_loop_events; data:pointer);cdecl;external;
+    procedure pw_data_loop_add_listener(loop:Ppw_data_loop; listener:Pspa_hook; events:Ppw_data_loop_events; data:pointer);cdecl;external External_library name 'pw_data_loop_add_listener';
 
     {* wait for activity on the loop up to \a timeout milliseconds.
      * Should be called from the loop function  }
-    function pw_data_loop_wait(loop:Ppw_data_loop; timeout:cint):cint;cdecl;external;
+    function pw_data_loop_wait(loop:Ppw_data_loop; timeout:cint):cint;cdecl;external External_library name 'pw_data_loop_wait';
 
     {* make sure the thread will exit. Can be called from a loop callback  }
-    procedure pw_data_loop_exit(loop:Ppw_data_loop);cdecl;external;
+    procedure pw_data_loop_exit(loop:Ppw_data_loop);cdecl;external External_library name 'pw_data_loop_exit';
 
     {* Get the loop implementation of this data loop  }
 (* error 
@@ -69,24 +68,24 @@ struct pw_loop *
 in declaration at line 59 *)
     {* Get the loop name. Since 1.1.0  }
 
-    function pw_data_loop_get_name(loop:Ppw_data_loop):pcchar;cdecl;external;
+    function pw_data_loop_get_name(loop:Ppw_data_loop):pcchar;cdecl;external External_library name 'pw_data_loop_get_name';
 
     {* Get the loop class. Since 1.1.0  }
 
-    function pw_data_loop_get_class(loop:Ppw_data_loop):pcchar;cdecl;external;
+    function pw_data_loop_get_class(loop:Ppw_data_loop):pcchar;cdecl;external External_library name 'pw_data_loop_get_class';
 
     {* Destroy the loop  }
-    procedure pw_data_loop_destroy(loop:Ppw_data_loop);cdecl;external;
+    procedure pw_data_loop_destroy(loop:Ppw_data_loop);cdecl;external External_library name 'pw_data_loop_destroy';
 
     {* Start the processing thread  }
-    function pw_data_loop_start(loop:Ppw_data_loop):cint;cdecl;external;
+    function pw_data_loop_start(loop:Ppw_data_loop):cint;cdecl;external External_library name 'pw_data_loop_start';
 
     {* Stop the processing thread  }
-    function pw_data_loop_stop(loop:Ppw_data_loop):cint;cdecl;external;
+    function pw_data_loop_stop(loop:Ppw_data_loop):cint;cdecl;external External_library name 'pw_data_loop_stop';
 
     {* Check if the current thread is the processing thread.
      * May be called from any thread.  }
-    function pw_data_loop_in_thread(loop:Ppw_data_loop):bool;cdecl;external;
+    function pw_data_loop_in_thread(loop:Ppw_data_loop):bool;cdecl;external External_library name 'pw_data_loop_in_thread';
 
     {* Get the thread object  }
 (* error 
@@ -120,11 +119,11 @@ in declaration at line 79 *)
      * Since 0.3.3  }
 
     function pw_data_loop_invoke(loop:Ppw_data_loop; func:spa_invoke_func_t; seq:uint32_t; data:pointer; size:size_t; 
-               block:bool; user_data:pointer):cint;cdecl;external;
+               block:bool; user_data:pointer):cint;cdecl;external External_library name 'pw_data_loop_invoke';
 
     {* Set a custom spa_thread_utils for this loop. Setting NULL restores the
      * system default implementation. Since 0.3.50  }
-    procedure pw_data_loop_set_thread_utils(loop:Ppw_data_loop; impl:Pspa_thread_utils);cdecl;external;
+    procedure pw_data_loop_set_thread_utils(loop:Ppw_data_loop; impl:Pspa_thread_utils);cdecl;external External_library name 'pw_data_loop_set_thread_utils';
 
     {*
      * \

@@ -67,7 +67,7 @@ struct pw_module_info *
 in declaration at line 51 *)
     {* Free a \ref pw_module_info  }
 
-    procedure pw_module_info_free(info:Ppw_module_info);cdecl;external;
+    procedure pw_module_info_free(info:Ppw_module_info);cdecl;external External_library name 'pw_module_info_free';
 
     const
       PW_MODULE_EVENT_INFO = 0;      

@@ -39,7 +39,7 @@ in define line 32 *)
 in define line 33 *)
 
 
-    function pw_type_info:Pspa_type_info;cdecl;external;
+    function pw_type_info:Pspa_type_info;cdecl;external External_library name 'pw_type_info';
 
     {*
      * \

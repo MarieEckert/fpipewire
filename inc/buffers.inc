@@ -56,9 +56,9 @@
 
 
   function pw_buffers_negotiate(context:Ppw_context; flags:uint32_t; outnode:Pspa_node; out_port_id:uint32_t; innode:Pspa_node; 
-             in_port_id:uint32_t; result:Ppw_buffers):cint;cdecl;external;
+             in_port_id:uint32_t; result:Ppw_buffers):cint;cdecl;external External_library name 'pw_buffers_negotiate';
 
-  procedure pw_buffers_clear(buffers:Ppw_buffers);cdecl;external;
+  procedure pw_buffers_clear(buffers:Ppw_buffers);cdecl;external External_library name 'pw_buffers_clear';
 
   {*
    * \

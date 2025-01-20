@@ -1,10 +1,3 @@
-  Type
-  Ppw_global  = ^pw_global;
-  Ppw_impl_client  = ^pw_impl_client;
-  Ppw_impl_module  = ^pw_impl_module;
-  Ppw_impl_port  = ^pw_impl_port;
-  Ppw_node  = ^pw_node;
-  Ppw_resource  = ^pw_resource;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}

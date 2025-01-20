@@ -1,13 +1,3 @@
-    Type
-    Ppw_core  = ^pw_core;
-    Ppw_core_events  = ^pw_core_events;
-    Ppw_core_info  = ^pw_core_info;
-    Ppw_core_methods  = ^pw_core_methods;
-    Ppw_properties  = ^pw_properties;
-    Ppw_registry  = ^pw_registry;
-    Ppw_registry_events  = ^pw_registry_events;
-    Ppw_registry_methods  = ^pw_registry_methods;
-    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -16,8 +6,6 @@
   { PipeWire  }
   { SPDX-FileCopyrightText: Copyright © 2018 Wim Taymans  }
   { SPDX-License-Identifier: MIT  }
-{$ifndef PIPEWIRE_CORE_H}
-{$define PIPEWIRE_CORE_H}  
 { C++ extern C conditionnal removed }
 
 
@@ -116,7 +104,7 @@ struct pw_core_info *
 in declaration at line 81 *)
     {* Free a \ref pw_core_info   }
 
-    procedure pw_core_info_free(info:Ppw_core_info);cdecl;external;
+    procedure pw_core_info_free(info:Ppw_core_info);cdecl;external External_library name 'pw_core_info_free';
 
     {* Core  }
     const
@@ -343,124 +331,9 @@ in declaration at line 81 *)
       pw_core_methods = record
         end;
 
-(* error 
-#define pw_core_method(o,method,version,...)			\
-in declaration at line 339 *)
-(* error 
-	int _res = -ENOTSUP;						\
-(* error 
-	spa_interface_call_res((struct spa_interface*)o,		\
-in declaration at line 342 *)
-(* error 
-			method, version, ##__VA_ARGS__);		\
-(* error 
-	_res;								\
-in declaration at line 343 *)
-(* error 
-	_res;								\
-(* error 
-})
-in define line 346 *)
-(* error 
-#define pw_core_hello(c,...)		pw_core_method(c,hello,0,__VA_ARGS__)
-in define line 347 *)
-(* error 
-#define pw_core_sync(c,...)		pw_core_method(c,sync,0,__VA_ARGS__)
-in define line 348 *)
-(* error 
-#define pw_core_pong(c,...)		pw_core_method(c,pong,0,__VA_ARGS__)
-in define line 349 *)
-(* error 
-#define pw_core_error(c,...)		pw_core_method(c,error,0,__VA_ARGS__)
-in define line 350 *)
-(* error 
-SPA_PRINTF_FUNC(5, 0) int
-(* error 
-SPA_PRINTF_FUNC(5, 0) int
-(* error 
-pw_core_errorv(struct pw_core *core, uint32_t id, int seq,
-(* error 
-pw_core_errorv(struct pw_core *core, uint32_t id, int seq,
-(* error 
-		int res, const char *message, va_list args)
-(* error 
-		int res, const char *message, va_list args)
-(* error 
-		int res, const char *message, va_list args)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
-(* error 
-	char buffer[1024];
- in declarator_list *)
-(* error 
-	vsnprintf(buffer, sizeof(buffer), message, args);
- in declarator_list *)
-(* error 
-	vsnprintf(buffer, sizeof(buffer), message, args);
- in declarator_list *)
-(* error 
-	buffer[1023] = '\0';
-in declaration at line 360 *)
 
-    function pw_core_error(_para1:core; _para2:id; _para3:seq; _para4:res; _para5:buffer):return;cdecl;external;
+    function pw_core_error(_para1:core; _para2:id; _para3:seq; _para4:res; _para5:buffer):return;cdecl;external External_library name 'pw_core_error';
 
-(* error 
-}
-in declaration at line 369 *)
-
-      var
-        r : cint;cvar;public;
-(* error 
-	va_start(args, message);
-(* error 
-	va_start(args, message);
- in declarator_list *)
- in declarator_list *)
-(* error 
-	r = pw_core_errorv(core, id, seq, res, message, args);
-in declaration at line 372 *)
-        args : va_end;cvar;public;
-        r : return;cvar;public;
-(* error 
-}
-in declaration at line 380 *)
-(* error 
-	spa_interface_call_res((struct spa_interface*)core,
-(* error 
-			struct pw_core_methods, res,
- in declarator_list *)
- in declarator_list *)
-(* error 
-			get_registry, 0, version, user_data_size);
- in declarator_list *)
-(* error 
-			get_registry, 0, version, user_data_size);
- in declarator_list *)
-        res : return;cvar;public;
-(* error 
-}
-in declaration at line 395 *)
-(* error 
-	spa_interface_call_res((struct spa_interface*)core,
-(* error 
-			struct pw_core_methods, res,
- in declarator_list *)
- in declarator_list *)
-(* error 
-			create_object, 0, factory_name,
- in declarator_list *)
-(* error 
-			type, version, props, user_data_size);
- in declarator_list *)
-        res : return;cvar;public;
-(* error 
-}
-in define line 403 *)
     {*
      * \
       }
@@ -569,59 +442,7 @@ in define line 403 *)
       pw_registry_methods = record
         end;
 
-(* error 
-#define pw_registry_method(o,method,version,...)			\
-in declaration at line 521 *)
-(* error 
-	int _res = -ENOTSUP;						\
-(* error 
-	spa_interface_call_res((struct spa_interface*)o,		\
-in declaration at line 524 *)
-(* error 
-			method, version, ##__VA_ARGS__);		\
-(* error 
-	_res;								\
-in declaration at line 525 *)
-(* error 
-	_res;								\
-(* error 
-})
-    {* Registry  }
-in define line 529 *)
-(* error 
-static inline void *
-(* error 
-		       uint32_t id, const char *type, uint32_t version,
-(* error 
-		       uint32_t id, const char *type, uint32_t version,
-(* error 
-		       uint32_t id, const char *type, uint32_t version,
-(* error 
-		       size_t user_data_size)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
-(* error 
-			struct pw_registry_methods, res,
- in declarator_list *)
-(* error 
-			bind, 0, id, type, version, user_data_size);
- in declarator_list *)
-(* error 
-			bind, 0, id, type, version, user_data_size);
- in declarator_list *)
-
-      var
-        res : return;cvar;public;
-(* error 
-}
-in define line 543 *)
-    {*
-     * \
-      }
-    {*
+   {*
      * \addtogroup pw_core
      * \
       }
@@ -665,18 +486,18 @@ in declaration at line 596 *)
     {* Steal the fd of the core connection or < 0 on error. The core
       * will be disconnected after this call.  }
 
-    function pw_core_steal_fd(core:Ppw_core):cint;cdecl;external;
+    function pw_core_steal_fd(core:Ppw_core):cint;cdecl;external External_library name 'pw_core_steal_fd';
 
     {* Pause or resume the core. When the core is paused, no new events
      *  will be dispatched until the core is resumed again.  }
-    function pw_core_set_paused(core:Ppw_core; paused:bool):cint;cdecl;external;
+    function pw_core_set_paused(core:Ppw_core; paused:bool):cint;cdecl;external External_library name 'pw_core_set_paused';
 
     {* disconnect and destroy a core  }
-    function pw_core_disconnect(core:Ppw_core):cint;cdecl;external;
+    function pw_core_disconnect(core:Ppw_core):cint;cdecl;external External_library name 'pw_core_disconnect';
 
     {* Get the user_data. It is of the size specified when this object was
      * constructed  }
-    function pw_core_get_user_data(core:Ppw_core):pointer;cdecl;external;
+    function pw_core_get_user_data(core:Ppw_core):pointer;cdecl;external External_library name 'pw_core_get_user_data';
 
     {* Get the client proxy of the connected core. This will have the id
      * of PW_ID_CLIENT (1)  }
@@ -689,35 +510,15 @@ struct pw_context * pw_core_get_context(struct pw_core *core);
 in declaration at line 618 *)
     {* Get properties from the core  }
 
-    function pw_core_get_properties(core:Ppw_core):Ppw_properties;cdecl;external;
+    function pw_core_get_properties(core:Ppw_core):Ppw_properties;cdecl;external External_library name 'pw_core_get_properties';
 
     {* Update the core properties. This updates the properties
      * of the associated client.
      * \return the number of properties that were updated  }
 
-    function pw_core_update_properties(core:Ppw_core; dict:Pspa_dict):cint;cdecl;external;
+    function pw_core_update_properties(core:Ppw_core; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_core_update_properties';
 
-    {* Get the core mempool object  }
-(* error 
-struct pw_mempool * pw_core_get_mempool(struct pw_core *core);
-in declaration at line 629 *)
-    {* Get the proxy with the given id  }
-(* error 
-struct pw_proxy *pw_core_find_proxy(struct pw_core *core, uint32_t id);
-in declaration at line 632 *)
-    {* Export an object into the PipeWire instance associated with core  }
-(* error 
-struct pw_proxy *pw_core_export(struct pw_core *core,			/**< the core */
-    {*< the core  }
-    {*< the type of object  }
-    {*< extra properties  }
-    {*< object to export  }
-    {*< extra user data  }in declaration at line 639 *)
-    {*
-     * \
-      }
 { C++ end of extern C conditionnal removed }
-{$endif}
     { PIPEWIRE_CORE_H  }
     { was #define dname def_expr }
     function PW_ID_ANY : uint32_t;

@@ -44,27 +44,27 @@
 
 
 
-  function pw_split_walk(str:pcchar; delimiter:pcchar; len:Psize_t; state:Ppcchar):pcchar;cdecl;external;
+  function pw_split_walk(str:pcchar; delimiter:pcchar; len:Psize_t; state:Ppcchar):pcchar;cdecl;external External_library name 'pw_split_walk';
 
 
 
-  function pw_split_strv(str:pcchar; delimiter:pcchar; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external;
+  function pw_split_strv(str:pcchar; delimiter:pcchar; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external External_library name 'pw_split_strv';
 
 
-  function pw_split_ip(str:pcchar; delimiter:pcchar; max_tokens:cint; tokens:Ppcchar):cint;cdecl;external;
+  function pw_split_ip(str:pcchar; delimiter:pcchar; max_tokens:cint; tokens:Ppcchar):cint;cdecl;external External_library name 'pw_split_ip';
 
 
-  function pw_strv_parse(val:pcchar; len:size_t; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external;
+  function pw_strv_parse(val:pcchar; len:size_t; max_tokens:cint; n_tokens:pcint):^pcchar;cdecl;external External_library name 'pw_strv_parse';
 
 
-  function pw_strv_find(a:Ppcchar; b:pcchar):cint;cdecl;external;
+  function pw_strv_find(a:Ppcchar; b:pcchar):cint;cdecl;external External_library name 'pw_strv_find';
 
-  function pw_strv_find_common(a:Ppcchar; b:Ppcchar):cint;cdecl;external;
+  function pw_strv_find_common(a:Ppcchar; b:Ppcchar):cint;cdecl;external External_library name 'pw_strv_find_common';
 
-  procedure pw_free_strv(str:Ppcchar);cdecl;external;
+  procedure pw_free_strv(str:Ppcchar);cdecl;external External_library name 'pw_free_strv';
 
 
-  function pw_strip(str:pcchar; whitespace:pcchar):pcchar;cdecl;external;
+  function pw_strip(str:pcchar; whitespace:pcchar):pcchar;cdecl;external External_library name 'pw_strip';
 
 {$if !defined(strndupa)}
 (* error 
@@ -124,7 +124,7 @@ in declaration at line 80 *)
 {$endif}
 in declaration at line 85 *)
 
-    procedure pw_random(buf:pointer; buflen:size_t);cdecl;external;
+    procedure pw_random(buf:pointer; buflen:size_t);cdecl;external External_library name 'pw_random';
 
 (* error 
 #define pw_rand32() ({ uint32_t val; pw_random(&val, sizeof(val)); val; })

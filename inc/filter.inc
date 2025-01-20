@@ -101,7 +101,7 @@
   {* Convert a filter state to a readable string   }
 
 
-  function pw_filter_state_as_string(state:pw_filter_state):pcchar;cdecl;external;
+  function pw_filter_state_as_string(state:pw_filter_state):pcchar;cdecl;external External_library name 'pw_filter_state_as_string';
 
   {* \enum pw_filter_flags Extra flags that can be used in \ref pw_filter_connect()   }
   {*< no flags  }
@@ -160,16 +160,16 @@ struct pw_filter *
     {*< data passed to events  }in declaration at line 142 *)
     {* Destroy a filter   }
 
-    procedure pw_filter_destroy(filter:Ppw_filter);cdecl;external;
+    procedure pw_filter_destroy(filter:Ppw_filter);cdecl;external External_library name 'pw_filter_destroy';
 
 
-    procedure pw_filter_add_listener(filter:Ppw_filter; listener:Pspa_hook; events:Ppw_filter_events; data:pointer);cdecl;external;
+    procedure pw_filter_add_listener(filter:Ppw_filter; listener:Pspa_hook; events:Ppw_filter_events; data:pointer);cdecl;external External_library name 'pw_filter_add_listener';
 
 (* error 
 enum pw_filter_state pw_filter_get_state(struct pw_filter *filter, const char **error);
 in declaration at line 152 *)
 
-    function pw_filter_get_name(filter:Ppw_filter):pcchar;cdecl;external;
+    function pw_filter_get_name(filter:Ppw_filter):pcchar;cdecl;external External_library name 'pw_filter_get_name';
 
 (* error 
 struct pw_core *pw_filter_get_core(struct pw_filter *filter);
@@ -183,14 +183,14 @@ in declaration at line 156 *)
     {*< filter flags  }
 
     {*< an array with params.  }
-    {*< number of items in \a params  }    function pw_filter_connect(filter:Ppw_filter; flags:pw_filter_flags; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external;
+    {*< number of items in \a params  }    function pw_filter_connect(filter:Ppw_filter; flags:pw_filter_flags; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external External_library name 'pw_filter_connect';
 
     {* Get the node ID of the filter.
      * \return node ID.  }
-    function pw_filter_get_node_id(filter:Ppw_filter):uint32_t;cdecl;external;
+    function pw_filter_get_node_id(filter:Ppw_filter):uint32_t;cdecl;external External_library name 'pw_filter_get_node_id';
 
     {* Disconnect \a filter   }
-    function pw_filter_disconnect(filter:Ppw_filter):cint;cdecl;external;
+    function pw_filter_disconnect(filter:Ppw_filter):cint;cdecl;external External_library name 'pw_filter_disconnect';
 
     {* add a port to the filter, returns user data of port_data_size.  }
     {*< a \ref pw_filter  }
@@ -202,18 +202,18 @@ in declaration at line 156 *)
     {*< an array of params. The params should
     							  *  ideally contain the supported formats  }
     {*< number of elements in \a params  }    function pw_filter_add_port(filter:Ppw_filter; direction:pw_direction; flags:pw_filter_port_flags; port_data_size:size_t; props:Ppw_properties; 
-               params:PPspa_pod; n_params:uint32_t):pointer;cdecl;external;
+               params:PPspa_pod; n_params:uint32_t):pointer;cdecl;external External_library name 'pw_filter_add_port';
 
     {* remove a port from the filter  }
-    {*< data associated with port  }    function pw_filter_remove_port(port_data:pointer):cint;cdecl;external;
+    {*< data associated with port  }    function pw_filter_remove_port(port_data:pointer):cint;cdecl;external External_library name 'pw_filter_remove_port';
 
     {* get properties, port_data of NULL will give global properties  }
 
-    function pw_filter_get_properties(filter:Ppw_filter; port_data:pointer):Ppw_properties;cdecl;external;
+    function pw_filter_get_properties(filter:Ppw_filter; port_data:pointer):Ppw_properties;cdecl;external External_library name 'pw_filter_get_properties';
 
     {* Update properties, use NULL port_data for global filter properties  }
 
-    function pw_filter_update_properties(filter:Ppw_filter; port_data:pointer; dict:Pspa_dict):cint;cdecl;external;
+    function pw_filter_update_properties(filter:Ppw_filter; port_data:pointer; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_filter_update_properties';
 
     {* Set the filter in error state  }
     {*< a \ref pw_filter  }
@@ -231,7 +231,7 @@ in declaration at line 156 *)
     {*< data associated with port  }
 
     {*< an array of params.  }
-    {*< number of elements in \a params  }    function pw_filter_update_params(filter:Ppw_filter; port_data:pointer; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external;
+    {*< number of elements in \a params  }    function pw_filter_update_params(filter:Ppw_filter; port_data:pointer; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external External_library name 'pw_filter_update_params';
 
     {* Query the time on the filter, deprecated, use the spa_io_position in the
      * process() method for timing information.  }
@@ -240,7 +240,7 @@ int pw_filter_get_time(struct pw_filter *filter, struct pw_time *time);
 in declaration at line 216 *)
     {* Get the current time in nanoseconds. This value can be compared with
      * the nsec value in the spa_io_position. Since 1.1.0  }
-    function pw_filter_get_nsec(filter:Ppw_filter):uint64_t;cdecl;external;
+    function pw_filter_get_nsec(filter:Ppw_filter):uint64_t;cdecl;external External_library name 'pw_filter_get_nsec';
 
     {* Get the data loop that is doing the processing of this filter. This loop
      * is assigned after pw_filter_connect().  * Since 1.1.0  }
@@ -253,34 +253,34 @@ in declaration at line 224 *)
 struct pw_buffer *pw_filter_dequeue_buffer(void *port_data);
 in declaration at line 228 *)
     {* Submit a buffer for playback or recycle a buffer for capture.  }
-    function pw_filter_queue_buffer(port_data:pointer; buffer:Ppw_buffer):cint;cdecl;external;
+    function pw_filter_queue_buffer(port_data:pointer; buffer:Ppw_buffer):cint;cdecl;external External_library name 'pw_filter_queue_buffer';
 
     {* Get a data pointer to the buffer data  }
-    function pw_filter_get_dsp_buffer(port_data:pointer; n_samples:uint32_t):pointer;cdecl;external;
+    function pw_filter_get_dsp_buffer(port_data:pointer; n_samples:uint32_t):pointer;cdecl;external External_library name 'pw_filter_get_dsp_buffer';
 
     {* Activate or deactivate the filter   }
-    function pw_filter_set_active(filter:Ppw_filter; active:bool):cint;cdecl;external;
+    function pw_filter_set_active(filter:Ppw_filter; active:bool):cint;cdecl;external External_library name 'pw_filter_set_active';
 
     {* Flush a filter. When \a drain is true, the drained callback will
      * be called when all data is played or recorded. The filter can be resumed
      * after the drain by setting it active again with
      * \ref pw_filter_set_active(). A flush without a drain is mostly useful afer
      * a state change to PAUSED, to flush any remaining data from the queues.  }
-    function pw_filter_flush(filter:Ppw_filter; drain:bool):cint;cdecl;external;
+    function pw_filter_flush(filter:Ppw_filter; drain:bool):cint;cdecl;external External_library name 'pw_filter_flush';
 
     {* Check if the filter is driving. The filter needs to have the
      * PW_FILTER_FLAG_DRIVER set. When the filter is driving,
      * pw_filter_trigger_process() needs to be called when data is
      * available (output) or needed (input). Since 0.3.66  }
-    function pw_filter_is_driving(filter:Ppw_filter):bool;cdecl;external;
+    function pw_filter_is_driving(filter:Ppw_filter):bool;cdecl;external External_library name 'pw_filter_is_driving';
 
     {* Check if the graph is using lazy scheduling.
      * Since 1.2.7  }
-    function pw_filter_is_lazy(filter:Ppw_filter):bool;cdecl;external;
+    function pw_filter_is_lazy(filter:Ppw_filter):bool;cdecl;external External_library name 'pw_filter_is_lazy';
 
     {* Trigger a push/pull on the filter. One iteration of the graph will
      * be scheduled and process() will be called. Since 0.3.66  }
-    function pw_filter_trigger_process(filter:Ppw_filter):cint;cdecl;external;
+    function pw_filter_trigger_process(filter:Ppw_filter):cint;cdecl;external External_library name 'pw_filter_trigger_process';
 
     {*
      * \

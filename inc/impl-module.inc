@@ -79,25 +79,25 @@ in declaration at line 71 *)
     {* Get the module properties  }
 
 
-    function pw_impl_module_get_properties(module:Ppw_impl_module):Ppw_properties;cdecl;external;
+    function pw_impl_module_get_properties(module:Ppw_impl_module):Ppw_properties;cdecl;external External_library name 'pw_impl_module_get_properties';
 
     {* Update the module properties  }
 
-    function pw_impl_module_update_properties(module:Ppw_impl_module; dict:Pspa_dict):cint;cdecl;external;
+    function pw_impl_module_update_properties(module:Ppw_impl_module; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_impl_module_update_properties';
 
     {* Get the module info  }
 
-    function pw_impl_module_get_info(module:Ppw_impl_module):Ppw_module_info;cdecl;external;
+    function pw_impl_module_get_info(module:Ppw_impl_module):Ppw_module_info;cdecl;external External_library name 'pw_impl_module_get_info';
 
     {* Add an event listener to a module  }
 
-    procedure pw_impl_module_add_listener(module:Ppw_impl_module; listener:Pspa_hook; events:Ppw_impl_module_events; data:pointer);cdecl;external;
+    procedure pw_impl_module_add_listener(module:Ppw_impl_module; listener:Pspa_hook; events:Ppw_impl_module_events; data:pointer);cdecl;external External_library name 'pw_impl_module_add_listener';
 
     {* Destroy a module  }
-    procedure pw_impl_module_destroy(module:Ppw_impl_module);cdecl;external;
+    procedure pw_impl_module_destroy(module:Ppw_impl_module);cdecl;external External_library name 'pw_impl_module_destroy';
 
     {* Schedule a destroy later on the main thread  }
-    procedure pw_impl_module_schedule_destroy(module:Ppw_impl_module);cdecl;external;
+    procedure pw_impl_module_schedule_destroy(module:Ppw_impl_module);cdecl;external External_library name 'pw_impl_module_schedule_destroy';
 
     {*
      * \

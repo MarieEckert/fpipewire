@@ -107,43 +107,43 @@ struct pw_context * pw_context_new(struct pw_loop *main_loop,
 in declaration at line 84 *)
     {* destroy a context object, all resources except the main_loop will be destroyed  }
 
-    procedure pw_context_destroy(context:Ppw_context);cdecl;external;
+    procedure pw_context_destroy(context:Ppw_context);cdecl;external External_library name 'pw_context_destroy';
 
     {* Get the context user data  }
-    function pw_context_get_user_data(context:Ppw_context):pointer;cdecl;external;
+    function pw_context_get_user_data(context:Ppw_context):pointer;cdecl;external External_library name 'pw_context_get_user_data';
 
     {* Add a new event listener to a context  }
 
-    procedure pw_context_add_listener(context:Ppw_context; listener:Pspa_hook; events:Ppw_context_events; data:pointer);cdecl;external;
+    procedure pw_context_add_listener(context:Ppw_context; listener:Pspa_hook; events:Ppw_context_events; data:pointer);cdecl;external External_library name 'pw_context_add_listener';
 
     {* Get the context properties  }
 
-    function pw_context_get_properties(context:Ppw_context):Ppw_properties;cdecl;external;
+    function pw_context_get_properties(context:Ppw_context):Ppw_properties;cdecl;external External_library name 'pw_context_get_properties';
 
     {* Update the context properties  }
 
-    function pw_context_update_properties(context:Ppw_context; dict:Pspa_dict):cint;cdecl;external;
+    function pw_context_update_properties(context:Ppw_context; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_context_update_properties';
 
     {* Get a config section for this context. Since 0.3.22, deprecated,
      * use pw_context_conf_section_for_each().  }
 
 
-    function pw_context_get_conf_section(context:Ppw_context; section:pcchar):pcchar;cdecl;external;
+    function pw_context_get_conf_section(context:Ppw_context; section:pcchar):pcchar;cdecl;external External_library name 'pw_context_get_conf_section';
 
     {* Parse a standard config section for this context. Since 0.3.22  }
 
-    function pw_context_parse_conf_section(context:Ppw_context; conf:Ppw_properties; section:pcchar):cint;cdecl;external;
+    function pw_context_parse_conf_section(context:Ppw_context; conf:Ppw_properties; section:pcchar):cint;cdecl;external External_library name 'pw_context_parse_conf_section';
 
     {* update properties from a section into props. Since 0.3.45  }
 
-    function pw_context_conf_update_props(context:Ppw_context; section:pcchar; props:Ppw_properties):cint;cdecl;external;
+    function pw_context_conf_update_props(context:Ppw_context; section:pcchar; props:Ppw_properties):cint;cdecl;external External_library name 'pw_context_conf_update_props';
 
     {* emit callback for all config sections. Since 0.3.45  }
 
 
 
 
-    function pw_context_conf_section_for_each(context:Ppw_context; section:pcchar; callback:function (data:pointer; location:pcchar; section:pcchar; str:pcchar; len:size_t):cint; data:pointer):cint;cdecl;external;
+    function pw_context_conf_section_for_each(context:Ppw_context; section:pcchar; callback:function (data:pointer; location:pcchar; section:pcchar; str:pcchar; len:size_t):cint; data:pointer):cint;cdecl;external External_library name 'pw_context_conf_section_for_each';
 
     {* emit callback for all matched properties. Since 0.3.46  }
 
@@ -151,11 +151,11 @@ in declaration at line 84 *)
 
 
 
-    function pw_context_conf_section_match_rules(context:Ppw_context; section:pcchar; props:Pspa_dict; callback:function (data:pointer; location:pcchar; action:pcchar; str:pcchar; len:size_t):cint; data:pointer):cint;cdecl;external;
+    function pw_context_conf_section_match_rules(context:Ppw_context; section:pcchar; props:Pspa_dict; callback:function (data:pointer; location:pcchar; action:pcchar; str:pcchar; len:size_t):cint; data:pointer):cint;cdecl;external External_library name 'pw_context_conf_section_match_rules';
 
     {* Get the context support objects  }
 
-    function pw_context_get_support(context:Ppw_context; n_support:Puint32_t):Pspa_support;cdecl;external;
+    function pw_context_get_support(context:Ppw_context; n_support:Puint32_t):Pspa_support;cdecl;external External_library name 'pw_context_get_support';
 
     {* Get the context main loop. Returns the value passed to pw_context_new().  }
 (* error 
@@ -174,7 +174,7 @@ struct pw_loop *pw_context_acquire_loop(struct pw_context *context, const struct
 in declaration at line 139 *)
     {* Release a data-loop.
      * Since 1.1.0  }
-    procedure pw_context_release_loop(context:Ppw_context; loop:Ppw_loop);cdecl;external;
+    procedure pw_context_release_loop(context:Ppw_context; loop:Ppw_loop);cdecl;external External_library name 'pw_context_release_loop';
 
     {* Get the work queue from the context: Since 0.3.26  }
 (* error 
@@ -188,7 +188,7 @@ in declaration at line 148 *)
      * 0 to fetch the next item, any other value stops the iteration and returns
      * the value. When all callbacks return 0, this function returns 0 when all
      * globals are iterated.  }
-    function pw_context_for_each_global(context:Ppw_context; callback:function (data:pointer; global:Ppw_global):cint; data:pointer):cint;cdecl;external;
+    function pw_context_for_each_global(context:Ppw_context; callback:function (data:pointer; global:Ppw_global):cint; data:pointer):cint;cdecl;external External_library name 'pw_context_for_each_global';
 
     {* Find a context global by id.
      *
@@ -201,12 +201,12 @@ struct pw_global *pw_context_find_global(struct pw_context *context,	/**< the co
     {* add a spa library for the given factory_name regex  }
 
 
-    function pw_context_add_spa_lib(context:Ppw_context; factory_regex:pcchar; lib:pcchar):cint;cdecl;external;
+    function pw_context_add_spa_lib(context:Ppw_context; factory_regex:pcchar; lib:pcchar):cint;cdecl;external External_library name 'pw_context_add_spa_lib';
 
     {* find the library name for a spa factory  }
 
 
-    function pw_context_find_spa_lib(context:Ppw_context; factory_name:pcchar):pcchar;cdecl;external;
+    function pw_context_find_spa_lib(context:Ppw_context; factory_name:pcchar):pcchar;cdecl;external External_library name 'pw_context_find_spa_lib';
 
     {* Load a SPA handle from a context. On failure returns NULL and sets errno.  }
 (* error 
@@ -228,12 +228,12 @@ in declaration at line 174 *)
     {* register a type that can be exported on a context_proxy. This is usually used by
      * extension modules  }
 
-    function pw_context_register_export_type(context:Ppw_context; _type:Ppw_export_type):cint;cdecl;external;
+    function pw_context_register_export_type(context:Ppw_context; _type:Ppw_export_type):cint;cdecl;external External_library name 'pw_context_register_export_type';
 
     {* find information about registered export type  }
 
 
-    function pw_context_find_export_type(context:Ppw_context; _type:pcchar):Ppw_export_type;cdecl;external;
+    function pw_context_find_export_type(context:Ppw_context; _type:pcchar):Ppw_export_type;cdecl;external External_library name 'pw_context_find_export_type';
 
     {* add an object to the context
      *
@@ -244,7 +244,7 @@ in declaration at line 174 *)
      * \return A negative number on failure (out of memory).
      *  }
 
-    function pw_context_set_object(context:Ppw_context; _type:pcchar; value:pointer):cint;cdecl;external;
+    function pw_context_set_object(context:Ppw_context; _type:pcchar; value:pointer):cint;cdecl;external External_library name 'pw_context_set_object';
 
     {* get an object from the context
      *
@@ -253,7 +253,7 @@ in declaration at line 174 *)
      * \return The object, or NULL if the object does not exist.
      *  }
 
-    function pw_context_get_object(context:Ppw_context; _type:pcchar):pointer;cdecl;external;
+    function pw_context_get_object(context:Ppw_context; _type:pcchar):pointer;cdecl;external External_library name 'pw_context_get_object';
 
     {*
      * \

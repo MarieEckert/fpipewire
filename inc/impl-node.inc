@@ -94,17 +94,17 @@ struct pw_impl_node *
     {* Complete initialization of the node and register  }
     {*< node to register  }
     {*< extra properties  }
-    function pw_impl_node_register(node:Ppw_impl_node; properties:Ppw_properties):cint;cdecl;external;
+    function pw_impl_node_register(node:Ppw_impl_node; properties:Ppw_properties):cint;cdecl;external External_library name 'pw_impl_node_register';
 
     {* Destroy a node  }
-    procedure pw_impl_node_destroy(node:Ppw_impl_node);cdecl;external;
+    procedure pw_impl_node_destroy(node:Ppw_impl_node);cdecl;external External_library name 'pw_impl_node_destroy';
 
     {* Get the node info  }
 
-    function pw_impl_node_get_info(node:Ppw_impl_node):Ppw_node_info;cdecl;external;
+    function pw_impl_node_get_info(node:Ppw_impl_node):Ppw_node_info;cdecl;external External_library name 'pw_impl_node_get_info';
 
     {* Get node user_data. The size of the memory was given in \ref pw_context_create_node  }
-    function pw_impl_node_get_user_data(node:Ppw_impl_node):pointer;cdecl;external;
+    function pw_impl_node_get_user_data(node:Ppw_impl_node):pointer;cdecl;external External_library name 'pw_impl_node_get_user_data';
 
     {* Get the context of this node  }
 (* error 
@@ -116,14 +116,14 @@ struct pw_global *pw_impl_node_get_global(struct pw_impl_node *node);
 in declaration at line 118 *)
     {* Get the node properties  }
 
-    function pw_impl_node_get_properties(node:Ppw_impl_node):Ppw_properties;cdecl;external;
+    function pw_impl_node_get_properties(node:Ppw_impl_node):Ppw_properties;cdecl;external External_library name 'pw_impl_node_get_properties';
 
     {* Update the node properties  }
 
-    function pw_impl_node_update_properties(node:Ppw_impl_node; dict:Pspa_dict):cint;cdecl;external;
+    function pw_impl_node_update_properties(node:Ppw_impl_node; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_impl_node_update_properties';
 
     {* Set the node implementation  }
-    function pw_impl_node_set_implementation(node:Ppw_impl_node; spa_node:Pspa_node):cint;cdecl;external;
+    function pw_impl_node_set_implementation(node:Ppw_impl_node; spa_node:Pspa_node):cint;cdecl;external External_library name 'pw_impl_node_set_implementation';
 
     {* Get the node implementation  }
 (* error 
@@ -131,24 +131,24 @@ struct spa_node *pw_impl_node_get_implementation(struct pw_impl_node *node);
 in declaration at line 130 *)
     {* Add an event listener  }
 
-    procedure pw_impl_node_add_listener(node:Ppw_impl_node; listener:Pspa_hook; events:Ppw_impl_node_events; data:pointer);cdecl;external;
+    procedure pw_impl_node_add_listener(node:Ppw_impl_node; listener:Pspa_hook; events:Ppw_impl_node_events; data:pointer);cdecl;external External_library name 'pw_impl_node_add_listener';
 
     {* Add an rt_event listener  }
 
-    procedure pw_impl_node_add_rt_listener(node:Ppw_impl_node; listener:Pspa_hook; events:Ppw_impl_node_rt_events; data:pointer);cdecl;external;
+    procedure pw_impl_node_add_rt_listener(node:Ppw_impl_node; listener:Pspa_hook; events:Ppw_impl_node_rt_events; data:pointer);cdecl;external External_library name 'pw_impl_node_add_rt_listener';
 
-    procedure pw_impl_node_remove_rt_listener(node:Ppw_impl_node; listener:Pspa_hook);cdecl;external;
+    procedure pw_impl_node_remove_rt_listener(node:Ppw_impl_node; listener:Pspa_hook);cdecl;external External_library name 'pw_impl_node_remove_rt_listener';
 
     {* Iterate the ports in the given direction. The callback should return
      * 0 to fetch the next item, any other value stops the iteration and returns
      * the value. When all callbacks return 0, this function returns 0 when all
      * items are iterated.  }
-    function pw_impl_node_for_each_port(node:Ppw_impl_node; direction:pw_direction; callback:function (data:pointer; port:Ppw_impl_port):cint; data:pointer):cint;cdecl;external;
+    function pw_impl_node_for_each_port(node:Ppw_impl_node; direction:pw_direction; callback:function (data:pointer; port:Ppw_impl_port):cint; data:pointer):cint;cdecl;external External_library name 'pw_impl_node_for_each_port';
 
 
     function pw_impl_node_for_each_param(node:Ppw_impl_node; seq:cint; param_id:uint32_t; index:uint32_t; max:uint32_t; 
                filter:Pspa_pod; callback:function (data:pointer; seq:cint; id:uint32_t; index:uint32_t; next:uint32_t; 
-                          param:Pspa_pod):cint; data:pointer):cint;cdecl;external;
+                          param:Pspa_pod):cint; data:pointer):cint;cdecl;external External_library name 'pw_impl_node_for_each_param';
 
     {* Find the port with direction and port_id or NULL when not found. Passing
      * PW_ID_ANY for port_id will return any port, preferably an unlinked one.  }
@@ -156,24 +156,24 @@ in declaration at line 130 *)
 struct pw_impl_port *
 in declaration at line 167 *)
     {* Get a free unused port_id from the node  }
-    function pw_impl_node_get_free_port_id(node:Ppw_impl_node; direction:pw_direction):uint32_t;cdecl;external;
+    function pw_impl_node_get_free_port_id(node:Ppw_impl_node; direction:pw_direction):uint32_t;cdecl;external External_library name 'pw_impl_node_get_free_port_id';
 
-    function pw_impl_node_initialized(node:Ppw_impl_node):cint;cdecl;external;
+    function pw_impl_node_initialized(node:Ppw_impl_node):cint;cdecl;external External_library name 'pw_impl_node_initialized';
 
     {* Set a node active. This will start negotiation with all linked active
       * nodes and start data transport  }
-    function pw_impl_node_set_active(node:Ppw_impl_node; active:bool):cint;cdecl;external;
+    function pw_impl_node_set_active(node:Ppw_impl_node; active:bool):cint;cdecl;external External_library name 'pw_impl_node_set_active';
 
     {* Check if a node is active  }
-    function pw_impl_node_is_active(node:Ppw_impl_node):bool;cdecl;external;
+    function pw_impl_node_is_active(node:Ppw_impl_node):bool;cdecl;external External_library name 'pw_impl_node_is_active';
 
     {* Check if a node is active, Since 0.3.39  }
 
-    function pw_impl_node_send_command(node:Ppw_impl_node; command:Pspa_command):cint;cdecl;external;
+    function pw_impl_node_send_command(node:Ppw_impl_node; command:Pspa_command):cint;cdecl;external External_library name 'pw_impl_node_send_command';
 
     {* Set a param on the node, Since 0.3.65  }
 
-    function pw_impl_node_set_param(node:Ppw_impl_node; id:uint32_t; flags:uint32_t; param:Pspa_pod):cint;cdecl;external;
+    function pw_impl_node_set_param(node:Ppw_impl_node; id:uint32_t; flags:uint32_t; param:Pspa_pod):cint;cdecl;external External_library name 'pw_impl_node_set_param';
 
     {*
      * \

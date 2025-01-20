@@ -124,13 +124,13 @@ in declaration at line 95 *)
     {* Listen for events  }
 
 
-    procedure pw_mempool_add_listener(pool:Ppw_mempool; listener:Pspa_hook; events:Ppw_mempool_events; data:pointer);cdecl;external;
+    procedure pw_mempool_add_listener(pool:Ppw_mempool; listener:Pspa_hook; events:Ppw_mempool_events; data:pointer);cdecl;external External_library name 'pw_mempool_add_listener';
 
     {* Clear a pool  }
-    procedure pw_mempool_clear(pool:Ppw_mempool);cdecl;external;
+    procedure pw_mempool_clear(pool:Ppw_mempool);cdecl;external External_library name 'pw_mempool_clear';
 
     {* Clear and destroy a pool  }
-    procedure pw_mempool_destroy(pool:Ppw_mempool);cdecl;external;
+    procedure pw_mempool_destroy(pool:Ppw_mempool);cdecl;external External_library name 'pw_mempool_destroy';
 
     {* Allocate a memory block from the pool  }
 (* error 
@@ -145,7 +145,7 @@ in declaration at line 116 *)
 struct pw_memblock * pw_mempool_import(struct pw_mempool *pool,
 in declaration at line 120 *)
     {* Free a memblock regardless of the refcount and destroy all mappings  }
-    procedure pw_memblock_free(mem:Ppw_memblock);cdecl;external;
+    procedure pw_memblock_free(mem:Ppw_memblock);cdecl;external External_library name 'pw_memblock_free';
 
     {* Unref a memblock  }
 (* error 
@@ -186,7 +186,7 @@ in declaration at line 156 *)
 struct pw_memmap * pw_mempool_find_tag(struct pw_mempool *pool, uint32_t tag[5], size_t size);
 in declaration at line 159 *)
     {* Unmap a region  }
-    function pw_memmap_free(map:Ppw_memmap):cint;cdecl;external;
+    function pw_memmap_free(map:Ppw_memmap):cint;cdecl;external External_library name 'pw_memmap_free';
 
     {* parameters to map a memory range  }
     {* offset in first page with start of data  }

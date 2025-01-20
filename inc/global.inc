@@ -1,11 +1,3 @@
-    Type
-    Ppw_global  = ^pw_global;
-    Ppw_global_events  = ^pw_global_events;
-    Ppw_impl_client  = ^pw_impl_client;
-    Ppw_properties  = ^pw_properties;
-    Ppw_resource  = ^pw_resource;
-    Pspa_dict  = Pointer; {$WARNING ^spa_dict}
-    Pspa_hook  = Pointer; {$WARNING ^spa_hook}
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -43,20 +35,15 @@
     }
 
   type
-    Ppw_global = ^pw_global;
-    pw_global = record
-        {undefined structure}
-      end;
-
+ 	TCB_pw_global_for_each_resource = function (data:pointer; resource:Ppw_resource):cint;
 
   {*< global object, see \ref pw_global_new  }
   {*< client that binds  }
   {*< permissions for the bind  }
   {*< client interface version  }
   {*< client proxy id  }
-  type
 
-    pw_global_bind_func_t = function (object:pointer; client:Ppw_impl_client; permissions:uint32_t; version:uint32_t; id:uint32_t):cint;cdecl;
+    pw_global_bind_func_t = function (_object:pointer; client:Ppw_impl_client; permissions:uint32_t; version:uint32_t; id:uint32_t):cint;cdecl;
   {* Global events, use \ref pw_global_add_listener  }
 (* error 
 #define PW_VERSION_GLOBAL_EVENTS 0
@@ -80,14 +67,14 @@ struct pw_global *
   {*< global object  }in declaration at line 71 *)
     {* Register a global object to the context registry  }
 
-    function pw_global_register(global:Ppw_global):cint;cdecl;external;
+    function pw_global_register(global:Ppw_global):cint;cdecl;external External_library name 'pw_global_register';
 
     {* Add an event listener on the global  }
 
-    procedure pw_global_add_listener(global:Ppw_global; listener:Pspa_hook; events:Ppw_global_events; data:pointer);cdecl;external;
+    procedure pw_global_add_listener(global:Ppw_global; listener:Pspa_hook; events:Ppw_global_events; data:pointer);cdecl;external External_library name 'pw_global_add_listener';
 
     {* Get the permissions of the global for a given client  }
-    function pw_global_get_permissions(global:Ppw_global; client:Ppw_impl_client):uint32_t;cdecl;external;
+    function pw_global_get_permissions(global:Ppw_global; client:Ppw_impl_client):uint32_t;cdecl;external External_library name 'pw_global_get_permissions';
 
     {* Get the context object of this global  }
 (* error 
@@ -95,51 +82,51 @@ struct pw_context *pw_global_get_context(struct pw_global *global);
 in declaration at line 86 *)
     {* Get the global type  }
 
-    function pw_global_get_type(global:Ppw_global):pcchar;cdecl;external;
+    function pw_global_get_type(global:Ppw_global):pcchar;cdecl;external External_library name 'pw_global_get_type';
 
     {* Check a global type  }
 
-    function pw_global_is_type(global:Ppw_global; _type:pcchar):bool;cdecl;external;
+    function pw_global_is_type(global:Ppw_global; _type:pcchar):bool;cdecl;external External_library name 'pw_global_is_type';
 
     {* Get the global version  }
-    function pw_global_get_version(global:Ppw_global):uint32_t;cdecl;external;
+    function pw_global_get_version(global:Ppw_global):uint32_t;cdecl;external External_library name 'pw_global_get_version';
 
     {* Get the global properties  }
 
-    function pw_global_get_properties(global:Ppw_global):Ppw_properties;cdecl;external;
+    function pw_global_get_properties(global:Ppw_global):Ppw_properties;cdecl;external External_library name 'pw_global_get_properties';
 
     {* Update the global properties, must be done when unregistered  }
 
 
 (* Const before declarator ignored *)
-    function pw_global_update_keys(global:Ppw_global; dict:Pspa_dict; keys:Ppcchar):cint;cdecl;external;
+    function pw_global_update_keys(global:Ppw_global; dict:Pspa_dict; keys:Ppcchar):cint;cdecl;external External_library name 'pw_global_update_keys';
 
     {* Get the object associated with the global. This depends on the type of the
       * global  }
-    function pw_global_get_object(global:Ppw_global):pointer;cdecl;external;
+    function pw_global_get_object(global:Ppw_global):pointer;cdecl;external External_library name 'pw_global_get_object';
 
     {* Get the unique id of the global  }
-    function pw_global_get_id(global:Ppw_global):uint32_t;cdecl;external;
+    function pw_global_get_id(global:Ppw_global):uint32_t;cdecl;external External_library name 'pw_global_get_id';
 
     {* Get the serial number of the global  }
-    function pw_global_get_serial(global:Ppw_global):uint64_t;cdecl;external;
+    function pw_global_get_serial(global:Ppw_global):uint64_t;cdecl;external External_library name 'pw_global_get_serial';
 
     {* Add a resource to a global  }
-    function pw_global_add_resource(global:Ppw_global; resource:Ppw_resource):cint;cdecl;external;
+    function pw_global_add_resource(global:Ppw_global; resource:Ppw_resource):cint;cdecl;external External_library name 'pw_global_add_resource';
 
     {* Iterate all resources added to the global The callback should return
      * 0 to fetch the next item, any other value stops the iteration and returns
      * the value. When all callbacks return 0, this function returns 0 when all
      * items are iterated.  }
-    function pw_global_for_each_resource(global:Ppw_global; callback:function (data:pointer; resource:Ppw_resource):cint; data:pointer):cint;cdecl;external;
+    function pw_global_for_each_resource(global:Ppw_global; callback: TCB_pw_global_for_each_resource; data:pointer):cint;cdecl;external External_library name 'pw_global_for_each_resource';
 
     {* Let a client bind to a global  }
-    function pw_global_bind(global:Ppw_global; client:Ppw_impl_client; permissions:uint32_t; version:uint32_t; id:uint32_t):cint;cdecl;external;
+    function pw_global_bind(global:Ppw_global; client:Ppw_impl_client; permissions:uint32_t; version:uint32_t; id:uint32_t):cint;cdecl;external External_library name 'pw_global_bind';
 
-    function pw_global_update_permissions(global:Ppw_global; client:Ppw_impl_client; old_permissions:uint32_t; new_permissions:uint32_t):cint;cdecl;external;
+    function pw_global_update_permissions(global:Ppw_global; client:Ppw_impl_client; old_permissions:uint32_t; new_permissions:uint32_t):cint;cdecl;external External_library name 'pw_global_update_permissions';
 
     {* Destroy a global  }
-    procedure pw_global_destroy(global:Ppw_global);cdecl;external;
+    procedure pw_global_destroy(global:Ppw_global);cdecl;external External_library name 'pw_global_destroy';
 
     {*
      * \

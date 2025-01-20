@@ -55,15 +55,15 @@ in declaration at line 51 *)
     {* Get the metadata properties  }
 
 
-    function pw_impl_metadata_get_properties(metadata:Ppw_impl_metadata):Ppw_properties;cdecl;external;
+    function pw_impl_metadata_get_properties(metadata:Ppw_impl_metadata):Ppw_properties;cdecl;external External_library name 'pw_impl_metadata_get_properties';
 
-    function pw_impl_metadata_register(metadata:Ppw_impl_metadata; properties:Ppw_properties):cint;cdecl;external;
+    function pw_impl_metadata_register(metadata:Ppw_impl_metadata; properties:Ppw_properties):cint;cdecl;external External_library name 'pw_impl_metadata_register';
 
-    procedure pw_impl_metadata_destroy(metadata:Ppw_impl_metadata);cdecl;external;
+    procedure pw_impl_metadata_destroy(metadata:Ppw_impl_metadata);cdecl;external External_library name 'pw_impl_metadata_destroy';
 
-    function pw_impl_metadata_get_user_data(metadata:Ppw_impl_metadata):pointer;cdecl;external;
+    function pw_impl_metadata_get_user_data(metadata:Ppw_impl_metadata):pointer;cdecl;external External_library name 'pw_impl_metadata_get_user_data';
 
-    function pw_impl_metadata_set_implementation(metadata:Ppw_impl_metadata; impl:Ppw_metadata):cint;cdecl;external;
+    function pw_impl_metadata_set_implementation(metadata:Ppw_impl_metadata; impl:Ppw_metadata):cint;cdecl;external External_library name 'pw_impl_metadata_set_implementation';
 
 (* error 
 struct pw_metadata *pw_impl_metadata_get_implementation(struct pw_impl_metadata *metadata);
@@ -74,13 +74,13 @@ struct pw_global *pw_impl_metadata_get_global(struct pw_impl_metadata *metadata)
 in declaration at line 69 *)
     {* Add an event listener  }
 
-    procedure pw_impl_metadata_add_listener(metadata:Ppw_impl_metadata; listener:Pspa_hook; events:Ppw_impl_metadata_events; data:pointer);cdecl;external;
+    procedure pw_impl_metadata_add_listener(metadata:Ppw_impl_metadata; listener:Pspa_hook; events:Ppw_impl_metadata_events; data:pointer);cdecl;external External_library name 'pw_impl_metadata_add_listener';
 
     {* Set a property  }
 
 
 
-    function pw_impl_metadata_set_property(metadata:Ppw_impl_metadata; subject:uint32_t; key:pcchar; _type:pcchar; value:pcchar):cint;cdecl;external;
+    function pw_impl_metadata_set_property(metadata:Ppw_impl_metadata; subject:uint32_t; key:pcchar; _type:pcchar; value:pcchar):cint;cdecl;external External_library name 'pw_impl_metadata_set_property';
 
 
 

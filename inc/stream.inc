@@ -424,7 +424,7 @@
   {* Convert a stream state to a readable string  }
 
 
-  function pw_stream_state_as_string(state:pw_stream_state):pcchar;cdecl;external;
+  function pw_stream_state_as_string(state:pw_stream_state):pcchar;cdecl;external External_library name 'pw_stream_state_as_string';
 
   {* \enum pw_stream_flags Extra flags that can be used in \ref pw_stream_connect()  }
   {*< no flags  }
@@ -495,25 +495,25 @@ struct pw_stream *
     {*< data passed to events  }in declaration at line 454 *)
     {* Destroy a stream  }
 
-    procedure pw_stream_destroy(stream:Ppw_stream);cdecl;external;
+    procedure pw_stream_destroy(stream:Ppw_stream);cdecl;external External_library name 'pw_stream_destroy';
 
 
-    procedure pw_stream_add_listener(stream:Ppw_stream; listener:Pspa_hook; events:Ppw_stream_events; data:pointer);cdecl;external;
+    procedure pw_stream_add_listener(stream:Ppw_stream; listener:Pspa_hook; events:Ppw_stream_events; data:pointer);cdecl;external External_library name 'pw_stream_add_listener';
 
 (* error 
 enum pw_stream_state pw_stream_get_state(struct pw_stream *stream, const char **error);
 in declaration at line 464 *)
 
-    function pw_stream_get_name(stream:Ppw_stream):pcchar;cdecl;external;
+    function pw_stream_get_name(stream:Ppw_stream):pcchar;cdecl;external External_library name 'pw_stream_get_name';
 
 (* error 
 struct pw_core *pw_stream_get_core(struct pw_stream *stream);
 in declaration at line 468 *)
 
-    function pw_stream_get_properties(stream:Ppw_stream):Ppw_properties;cdecl;external;
+    function pw_stream_get_properties(stream:Ppw_stream):Ppw_properties;cdecl;external External_library name 'pw_stream_get_properties';
 
 
-    function pw_stream_update_properties(stream:Ppw_stream; dict:Pspa_dict):cint;cdecl;external;
+    function pw_stream_update_properties(stream:Ppw_stream; dict:Pspa_dict):cint;cdecl;external External_library name 'pw_stream_update_properties';
 
     {* Connect a stream for input or output on \a port_path.
      * \return 0 on success < 0 on error.
@@ -538,14 +538,14 @@ in declaration at line 468 *)
     							  *  should ideally contain supported
     							  *  formats.  }
     {*< number of items in \a params  }    function pw_stream_connect(stream:Ppw_stream; direction:pw_direction; target_id:uint32_t; flags:pw_stream_flags; params:PPspa_pod; 
-               n_params:uint32_t):cint;cdecl;external;
+               n_params:uint32_t):cint;cdecl;external External_library name 'pw_stream_connect';
 
     {* Get the node ID of the stream.
      * \return node ID.  }
-    function pw_stream_get_node_id(stream:Ppw_stream):uint32_t;cdecl;external;
+    function pw_stream_get_node_id(stream:Ppw_stream):uint32_t;cdecl;external External_library name 'pw_stream_get_node_id';
 
     {* Disconnect \a stream   }
-    function pw_stream_disconnect(stream:Ppw_stream):cint;cdecl;external;
+    function pw_stream_disconnect(stream:Ppw_stream):cint;cdecl;external External_library name 'pw_stream_disconnect';
 
     {* Set the stream in error state  }
     {*< a \ref pw_stream  }
@@ -562,7 +562,7 @@ in declaration at line 468 *)
     {*< a \ref pw_stream  }
 
     {*< an array of params.  }
-    {*< number of elements in \a params  }    function pw_stream_update_params(stream:Ppw_stream; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external;
+    {*< number of elements in \a params  }    function pw_stream_update_params(stream:Ppw_stream; params:PPspa_pod; n_params:uint32_t):cint;cdecl;external External_library name 'pw_stream_update_params';
 
     {*
      * Set a parameter on the stream. This is like pw_stream_set_control() but with
@@ -571,23 +571,23 @@ in declaration at line 468 *)
     {*< a \ref pw_stream  }
     {*< the id of the param  }
 
-    {*< the params to set  }    function pw_stream_set_param(stream:Ppw_stream; id:uint32_t; param:Pspa_pod):cint;cdecl;external;
+    {*< the params to set  }    function pw_stream_set_param(stream:Ppw_stream; id:uint32_t; param:Pspa_pod):cint;cdecl;external External_library name 'pw_stream_set_param';
 
     {* Get control values  }
 
-    function pw_stream_get_control(stream:Ppw_stream; id:uint32_t):Ppw_stream_control;cdecl;external;
+    function pw_stream_get_control(stream:Ppw_stream; id:uint32_t):Ppw_stream_control;cdecl;external External_library name 'pw_stream_get_control';
 
     {* Set control values  }
-    function pw_stream_set_control(stream:Ppw_stream; id:uint32_t; n_values:uint32_t; values:Pcfloat; args:array of const):cint;cdecl;external;
+    function pw_stream_set_control(stream:Ppw_stream; id:uint32_t; n_values:uint32_t; values:Pcfloat; args:array of const):cint;cdecl;external External_library name 'pw_stream_set_control';
 
-    function pw_stream_set_control(stream:Ppw_stream; id:uint32_t; n_values:uint32_t; values:Pcfloat):cint;cdecl;external;
+    function pw_stream_set_control(stream:Ppw_stream; id:uint32_t; n_values:uint32_t; values:Pcfloat):cint;cdecl;external External_library name 'pw_stream_set_control';
 
     {* Query the time on the stream  }
-    function pw_stream_get_time_n(stream:Ppw_stream; time:Ppw_time; size:size_t):cint;cdecl;external;
+    function pw_stream_get_time_n(stream:Ppw_stream; time:Ppw_time; size:size_t):cint;cdecl;external External_library name 'pw_stream_get_time_n';
 
     {* Get the current time in nanoseconds. This value can be compared with
      * the \ref pw_time.now value. Since 1.1.0  }
-    function pw_stream_get_nsec(stream:Ppw_stream):uint64_t;cdecl;external;
+    function pw_stream_get_nsec(stream:Ppw_stream):uint64_t;cdecl;external External_library name 'pw_stream_get_nsec';
 
     {* Get the data loop that is doing the processing of this stream. This loop
      * is assigned after pw_stream_connect().  * Since 1.1.0  }
@@ -605,10 +605,10 @@ in declaration at line 546 *)
 struct pw_buffer *pw_stream_dequeue_buffer(struct pw_stream *stream);
 in declaration at line 550 *)
     {* Submit a buffer for playback or recycle a buffer for capture.  }
-    function pw_stream_queue_buffer(stream:Ppw_stream; buffer:Ppw_buffer):cint;cdecl;external;
+    function pw_stream_queue_buffer(stream:Ppw_stream; buffer:Ppw_buffer):cint;cdecl;external External_library name 'pw_stream_queue_buffer';
 
     {* Activate or deactivate the stream  }
-    function pw_stream_set_active(stream:Ppw_stream; active:bool):cint;cdecl;external;
+    function pw_stream_set_active(stream:Ppw_stream; active:bool):cint;cdecl;external External_library name 'pw_stream_set_active';
 
     {* Flush a stream. When \a drain is true, the drained callback will
      * be called when all data is played or recorded. The stream can be resumed
@@ -616,13 +616,13 @@ in declaration at line 550 *)
      * \ref pw_stream_set_active(). A flush without a drain is mostly useful afer
      * a state change to PAUSED, to flush any remaining data from the queues and
      * the converters.  }
-    function pw_stream_flush(stream:Ppw_stream; drain:bool):cint;cdecl;external;
+    function pw_stream_flush(stream:Ppw_stream; drain:bool):cint;cdecl;external External_library name 'pw_stream_flush';
 
     {* Check if the stream is driving. The stream needs to have the
      * PW_STREAM_FLAG_DRIVER set. When the stream is driving,
      * pw_stream_trigger_process() needs to be called when data is
      * available (output) or needed (input). Since 0.3.34  }
-    function pw_stream_is_driving(stream:Ppw_stream):bool;cdecl;external;
+    function pw_stream_is_driving(stream:Ppw_stream):bool;cdecl;external External_library name 'pw_stream_is_driving';
 
     {* Check if the graph is using lazy scheduling. If the stream is
      * driving according to \ref pw_stream_is_driving(), then it should
@@ -637,7 +637,7 @@ in declaration at line 550 *)
      * It is not a requirement that all RequestProcess events/commands
      * need to start a graph cycle.
      * Since 1.2.7  }
-    function pw_stream_is_lazy(stream:Ppw_stream):bool;cdecl;external;
+    function pw_stream_is_lazy(stream:Ppw_stream):bool;cdecl;external External_library name 'pw_stream_is_lazy';
 
     {* Trigger a push/pull on the stream. One iteration of the graph will
      * be scheduled when the stream is driving according to
@@ -666,7 +666,7 @@ in declaration at line 550 *)
      * driver, this method will have no effect.
      *
      * Since 0.3.34  }
-    function pw_stream_trigger_process(stream:Ppw_stream):cint;cdecl;external;
+    function pw_stream_trigger_process(stream:Ppw_stream):cint;cdecl;external External_library name 'pw_stream_trigger_process';
 
     {*
      * \

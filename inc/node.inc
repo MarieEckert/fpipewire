@@ -58,7 +58,7 @@ in define line 30 *)
     {* Convert a \ref pw_node_state to a readable string  }
 
 
-    function pw_node_state_as_string(state:pw_node_state):pcchar;cdecl;external;
+    function pw_node_state_as_string(state:pw_node_state):pcchar;cdecl;external External_library name 'pw_node_state_as_string';
 
     {* The node information. Extra information can be added in later versions  }
     {*< id of the global  }
@@ -88,7 +88,7 @@ in declaration at line 74 *)
 struct pw_node_info *
 in declaration at line 78 *)
 
-    procedure pw_node_info_free(info:Ppw_node_info);cdecl;external;
+    procedure pw_node_info_free(info:Ppw_node_info);cdecl;external External_library name 'pw_node_info_free';
 
     const
       PW_NODE_EVENT_INFO = 0;      

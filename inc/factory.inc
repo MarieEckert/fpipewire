@@ -65,7 +65,7 @@ in declaration at line 49 *)
 struct pw_factory_info *
 in declaration at line 52 *)
 
-    procedure pw_factory_info_free(info:Ppw_factory_info);cdecl;external;
+    procedure pw_factory_info_free(info:Ppw_factory_info);cdecl;external External_library name 'pw_factory_info_free';
 
     const
       PW_FACTORY_EVENT_INFO = 0;      

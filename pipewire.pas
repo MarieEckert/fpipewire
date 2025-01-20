@@ -5,6 +5,8 @@ interface
 
 uses ctypes;
 
+const EXTERNAL_LIBRARY = 'pipewire-0.3';
+
 { Pointers to basic pascal types, inserted by h2pas conversion program.}
 Type
   PLongint  = ^Longint;
@@ -16,24 +18,51 @@ Type
   uint8_t   = UInt8;
   uint16_t  = UInt16;
   uint32_t  = UInt32;
+  uint64_t  = UInt64;
   int8_t    = Int8;
   int16_t   = Int16;
   int32_t   = Int32;
+  int64_t   = Int64;
   size_t    = SizeUInt;
   ssize_t   = SizeInt;
+  uintptr_t = UIntPtr;
+  intptr_t  = IntPtr;
   bool      = Boolean;
+  Pbool  = ^bool;
+  PFILE  = ^FILE;
+  Pint32_t  = ^int32_t;
+  Pint64_t  = ^int64_t;
+  Puint32_t  = ^uint32_t;
+  Puint64_t  = ^uint64_t;
+  PPCChar    = ^PCChar;
 
+  spa_dict = record
+    flags: UInt32;
+    n_items: UInt32;
+    items: Pointer;
+  end;
+  Pspa_dict  = Pointer; {$WARNING ^spa_dict}
+
+  spa_list = record
+    next: Pointer;
+    prev: Pointer;
+  end;
+
+  spa_direction = (SPA_DIRECTION_INPUT = 0, SPA_DIRECTION_OUTPUT = 1);
+
+{$INCLUDE inc/array.inc}
 {$INCLUDE inc/data-loop.inc}
+{$INCLUDE inc/properties.inc}
 {$INCLUDE inc/map.inc}
 {$INCLUDE inc/impl-device.inc}
 {$INCLUDE inc/port.inc}
+{$INCLUDE inc/impl.inc}
 {$INCLUDE inc/global.inc}
+{$INCLUDE inc/core.inc}
 {$INCLUDE inc/protocol.inc}
 {$INCLUDE inc/i18n.inc}
-{$INCLUDE inc/impl.inc}
 {$INCLUDE inc/work-queue.inc}
 {$INCLUDE inc/resource.inc}
-{$INCLUDE inc/core.inc}
 {$INCLUDE inc/node.inc}
 {$INCLUDE inc/utils.inc}
 {$INCLUDE inc/conf.inc}
@@ -50,7 +79,6 @@ Type
 {$INCLUDE inc/impl-node.inc}
 {$INCLUDE inc/buffers.inc}
 {$INCLUDE inc/client.inc}
-{$INCLUDE inc/properties.inc}
 {$INCLUDE inc/main-loop.inc}
 {$INCLUDE inc/proxy.inc}
 {$INCLUDE inc/stream.inc}
